@@ -1,3 +1,6 @@
+![Preview](http://martinfeick.com/wp-content/uploads/2020/07/VRQuestionnairePrefab-1.gif)
+
+
 # VRQuestionnaireToolkit
 
 This repository hosts the open-source VRQuestionnaireToolkit developed to ease assessing subjective measurements in Virtual Reality. It comes with an easy-to-use Unity3D package which can be integrated in existing projects.
