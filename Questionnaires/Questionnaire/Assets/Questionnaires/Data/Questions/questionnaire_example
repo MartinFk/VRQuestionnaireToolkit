@@ -1,0 +1,304 @@
+{
+   "qTitle":"Example Questionnaire",
+   "qInstructions":"Please answer all questions....",
+   "qId":"exampleQE",
+   "questions":[
+      {
+         "pId":"page1",
+         "qType":"radio",
+         "qInstructions":"Choose one option for each question",
+         "qData":[
+            {
+               "qId":"q1",
+               "qText":"UIST is an amazing conference",
+               "qMandatory":"false",
+               "qOptions":[
+                  "",
+				  "Strongly Disagree",
+                  "Disagree",  
+                  "Neutral",			                    
+                  "Agree",
+				  "Strongly Agree",
+                  ""
+               ]
+            },
+            {
+               "qId":"q2",
+               "qText":"VR is a beautiful research tool",
+               "qMandatory":"false",
+               "qOptions":[
+                  "",
+				  "Strongly Disagree",
+                  "Disagree",  
+                  "Neutral",			                    
+                  "Agree",
+				  "Strongly Agree",
+                  ""
+               ]
+            },
+            {
+               "qId":"q3",
+               "qText":"Happiness is the key to success",
+               "qMandatory":"false",
+               "qOptions":[
+                  "",
+				  "Strongly Disagree",
+                  "Disagree",  
+                  "Neutral",			                    
+                  "Agree",
+				  "Strongly Agree",
+                  ""
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page2",
+         "qType":"radio",
+         "qInstructions":"Choose an option...",
+         "qData":[
+            {
+               "qId":"q1",
+               "qText":"Debugging is awesome",
+               "qMandatory":"true",
+               "qOptions":[
+                  "Strongly Disagree",
+				  "Disagree",
+                  "Somewhat Disagree",
+                  "Neutral",
+				  "Somewhat Agree",
+                  "Agree",
+                  "Strongly Agree"
+               ]
+            },
+            {
+               "qId":"q2",
+               "qText":"I like fixing bugs",
+               "qMandatory":"true",
+               "qOptions":[
+                  "Strongly Disagree",
+				  "Disagree",
+                  "Somewhat Disagree",
+                  "Neutral",
+				  "Somewhat Agree",
+                  "Agree",
+                  "Strongly Agree"
+               ]
+            },
+            {
+               "qId":"q3",
+               "qText":"I would use the VRQuestionnaireToolkit",
+               "qMandatory":"true",
+               "qOptions":[
+                  "Strongly Disagree",
+				  "Disagree",
+                  "Somewhat Disagree",
+                  "Neutral",
+				  "Somewhat Agree",
+                  "Agree",
+                  "Strongly Agree"
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page3",
+         "qType":"radioGrid",
+         "qInstructions":"Choose one option for each condition",
+         "qOptions":[
+            "",
+			"Strongly Disagree",
+            "Disagree",  
+            "Neutral",			                    
+            "Agree",
+			"Strongly Agree",
+            ""
+         ],
+         "qConditions":[
+            {
+               "qId":"c1",
+               "qText":"Hololens"
+            },
+            {
+               "qId":"c2",
+               "qText":"Oculus Rift"
+            },
+            {
+               "qId":"c3",
+               "qText":"Vive"
+            },
+            {
+               "qId":"c4",
+               "qText":"Magic Leap"
+            }
+         ],
+         "qData":[
+            {
+               "qId":"q1",
+               "qText":"The system was easy to use",
+               "qMandatory":"true"
+            }
+         ]
+      },
+      {
+         "pId":"page4",
+         "qType":"radioGrid",
+         "qInstructions":"Choose one option for each condition",
+         "qOptions":[
+		    "Strongly Disagree",
+			"Disagree",
+            "Somewhat Disagree",
+            "Neutral",
+			"Somewhat Agree",
+            "Agree",
+            "Strongly Agree"
+         ],
+         "qConditions":[
+            {
+               "qId":"c1",
+               "qText":"Hololens"
+            },
+            {
+               "qId":"c2",
+               "qText":"Oculus Rift"
+            },
+            {
+               "qId":"c3",
+               "qText":"Vive"
+            },
+            {
+               "qId":"c4",
+               "qText":"Magic Leap"
+            }
+         ],
+         "qData":[
+            {
+               "qId":"q1",
+               "qText":"The system was easy to use",
+               "qMandatory":"true"
+            }
+         ]
+      },
+      {
+         "pId":"page5",
+         "qType":"checkbox",
+         "qInstructions":"Choose all options that apply",
+         "qOptions":[
+            "It's too expensive",
+            "The technology isn't that good yet ",
+            "There is not enough content and/or games ",
+            "I don't like wearing the headset ",
+            "The experience isn't immersive enough",
+            "The experience isn't better than traditional gaming"
+         ],
+         "qData":[
+            {
+               "qId":"q1",
+               "qText":" If you don’t use VR frequently; what is keeping you from adopting this?",
+               "qMandatory":"true"
+            }
+         ]
+      },
+      {
+         "pId":"page6",
+         "qType":"linearSlider",
+         "qInstructions":"Choose the most suitable position.",
+         "qData":[
+            {
+               "qId":"s1",
+               "qText":"Temporal Demand:			How hurried or rushed was the pace of the task?",
+               "qMin":"0",
+               "qMinLabel":"Low",
+               "qMax":"3",
+               "qMaxLabel":"High"
+            },
+            {
+               "qId":"s1",
+               "qText":"Physical Demand:				How physically demanding was the task?",
+               "qMin":"0",
+               "qMinLabel":"Low",
+               "qMax":"12",
+               "qMaxLabel":"High"
+            },
+            {
+               "qId":"s1",
+               "qText":"Mental Demand:				How mentally demanding was the task?",
+               "qMin":"0",
+               "qMinLabel":"Low",
+               "qMax":"20",
+               "qMaxLabel":"High"
+            }
+         ]
+      },
+      {
+         "pId":"page7",
+         "qType":"linearGrid",
+         "qInstructions":"Please rate all measures by clicking a point on the scale.",
+         "qData":[
+            {
+               "qId":"s1",
+               "qText":"Mental Demand:				How mentally demanding was the task?",
+               "qMandatory":"true",
+               "qMin":"0",
+               "qMinLabel":"Low",
+               "qMax":"20",
+               "qMaxLabel":"High"
+            },
+            {
+               "qId":"s2",
+               "qText":"Physical Demand:				How physically demanding was the task?",
+               "qMandatory":"false",
+               "qMin":"0",
+               "qMinLabel":"Low",
+               "qMax":"20",
+               "qMaxLabel":"High"
+            },
+            {
+               "qId":"s3",
+               "qText":"Temporal Demand:		    How hurried or rushed was the pace of the task?",
+               "qMandatory":"false",
+               "qMin":"0",
+               "qMinLabel":"Low",
+               "qMax":"20",
+               "qMaxLabel":"High"
+            }
+         ]
+      },
+      {
+         "pId":"page8",
+         "qType":"dropdown",
+         "qInstructions":"Please select the correct answer",
+         "qData":[
+            {
+               "qId":"d1",
+               "qText":"Demanding",
+               "qOptions":[
+                  "Yes",
+                  "Average",
+                  "No"
+               ]
+            },
+            {
+               "qId":"d2",
+               "qText":"Mental",
+               "qOptions":[
+                  "Yes",
+                  "Average",
+                  "No"
+               ]
+            },
+            {
+               "qId":"d3",
+               "qText":"Physical",
+               "qOptions":[
+                  "Yes",
+                  "Average",
+                  "No"
+               ]
+            }
+         ]
+      }
+   ],
+   "qMessage":"You have completed the questionnaire",
+   "qAcknowledgments":"Thank you very much for taking part in the experiment! We appreciate your time!"
+}

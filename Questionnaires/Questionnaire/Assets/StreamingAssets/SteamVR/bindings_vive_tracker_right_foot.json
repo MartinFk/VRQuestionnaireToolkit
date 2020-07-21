@@ -1,0 +1,68 @@
+{
+  "controller_type": "vive_tracker_right_foot",
+  "bindings": {
+    "/actions/htc_viu": {
+      "chords": [],
+      "sources": [
+        {
+          "path": "/user/foot/right/input/power",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_00"
+            }
+          }
+        },
+        {
+          "path": "/user/foot/right/input/trigger",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_33"
+            }
+          }
+        },
+        {
+          "path": "/user/foot/right/input/grip",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_02"
+            }
+          }
+        },
+        {
+          "path": "/user/foot/right/input/application_menu",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_01"
+            }
+          }
+        },
+        {
+          "path": "/user/foot/right/input/thumb",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_32"
+            }
+          }
+        }
+      ],
+      "poses": [],
+      "haptics": [
+        {
+          "output": "/actions/htc_viu/out/viu_vib_01",
+          "path": "/user/foot/right/output/haptic"
+        }
+      ],
+      "skeleton": []
+    }
+  }
+}

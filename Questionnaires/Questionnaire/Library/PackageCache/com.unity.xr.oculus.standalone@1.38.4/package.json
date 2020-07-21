@@ -1,0 +1,23 @@
+{
+  "name": "com.unity.xr.oculus.standalone",
+  "displayName": "Oculus Desktop",
+  "version": "1.38.4",
+  "unity": "2018.3",
+  "description": "This package contains the necessary components required to use the Oculus Virtual Reality SDK on desktop platforms. By using this package, you will be able to deploy and run your applications on Oculus supported devices.",
+  "keywords": [
+    "oculus",
+    "xr",
+    "vr",
+    "virtual",
+    "sdk",
+    "standalone",
+    "desktop",
+    "rift"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Unity-Technologies/com.unity.xr.oculus.legacy.git",
+    "revision": "5521c4e0e1d8c8c8ed02be51ca4e7093d6e141b0"
+  }
+}

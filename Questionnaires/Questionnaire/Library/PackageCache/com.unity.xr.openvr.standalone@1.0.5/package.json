@@ -1,0 +1,25 @@
+{
+    "dependencies": {}, 
+    "description": "This package contains the necessary components required to use the OpenVR SDK on desktop platforms. By using this package, you will be able to deploy and run your applications on SteamVR supported devices.", 
+    "displayName": "OpenVR (Desktop)", 
+    "keywords": [
+        "openvr", 
+        "xr", 
+        "vr", 
+        "virtual", 
+        "open", 
+        "sdk", 
+        "steam", 
+        "steamvr", 
+        "valve"
+    ], 
+    "name": "com.unity.xr.openvr.standalone", 
+    "repoPackagePath": "build/packages/com.unity.xr.openvr.standalone", 
+    "repository": {
+        "revision": "0598462f582f47634c097b5afde2fed017591d9d", 
+        "type": "git", 
+        "url": "ssh://git@github.com/Unity-Technologies/upm-xr-openvr.git"
+    }, 
+    "unity": "2018.3", 
+    "version": "1.0.5"
+}

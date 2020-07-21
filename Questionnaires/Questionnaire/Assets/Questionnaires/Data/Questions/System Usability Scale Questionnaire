@@ -1,0 +1,177 @@
+{
+   "qTitle":"System Usability Scale Questionnaire",
+   "qInstructions":"Instructions: Please choose the most fitting response according to the following 10 statements",
+   "qId":"Usability",
+   "questions":[
+      {
+         "pId":"page1",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qData":[
+            {
+               "qId":"q1",
+               "qText":"I think that I would like to use this system frequently...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            },
+            {
+               "qId":"q2",
+               "qText":"I found the system unnecessarily complex...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            },
+            {
+               "qId":"q3",
+               "qText":"I thought the system was easy to use...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page2",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qData":[
+            {
+               "qId":"q4",
+               "qText":"I think that I would need the support of a technical person to be able to use this system...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            },
+            {
+               "qId":"q5",
+               "qText":"I found the various functions in this system were well integrated...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            },
+            {
+               "qId":"q6",
+               "qText":"I thought there was too much inconsistency in this system...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page3",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qData":[
+            {
+               "qId":"q7",
+               "qText":"I would imagine that most people would learn to use this system very quickly...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            },
+            {
+               "qId":"q8",
+               "qText":"I found the system very cumbersome to use...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            },
+            {
+               "qId":"q9",
+               "qText":"I felt very confident using the system...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page4",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qData":[
+            {
+               "qId":"q10",
+               "qText":"I needed to learn a lot of things before I could get going with this system...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "",
+                  "Strongly Disagree",
+                  "Disagree",
+                  "Neutral",
+                  "Agree",
+                  "Strongly Agree",
+                  ""
+               ]
+            }
+         ]
+      }
+   ],
+   "qMessage":"You have completed the questionnaire",
+   "qAcknowledgments":"Thank you very much for taking part in the experiment! We appreciate your time!"
+}

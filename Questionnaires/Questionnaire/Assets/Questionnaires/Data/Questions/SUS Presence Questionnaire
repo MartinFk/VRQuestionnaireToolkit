@@ -1,0 +1,108 @@
+{
+   "qTitle":"SUS Presence Questionnaire",
+   "qInstructions":"Instructions: Please answer all 6 questions by clicking a point on the scale that best represents your experience with the task in the virtual environment (VE)",
+   "qId":"SUS",
+   "questions":[
+      {
+         "pId":"page1",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qData":[
+            {
+               "qId":"q1",
+               "qText":"I had a sense of “being there” in the virtual environment:",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = not at all",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = very much"
+               ]
+            },
+            {
+               "qId":"q2",
+               "qText":"There were times during the experience when the virtual environment was the reality for me...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = at no time",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = almost all the time"
+               ]
+            },
+            {
+               "qId":"q3",
+               "qText":"The virtual environment seems to me to be more like...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = images I saw",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = somewhere I visited"
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page2",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qMandatory":"true",
+         "qData":[
+            {
+               "qId":"q4",
+               "qText":"I had a stronger sense of...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = being elsewhere",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = being in the VE"
+               ]
+            },
+            {
+               "qId":"q5",
+               "qText":"I think of the virtual environment as a place in a way similar to other places that I’ve been today...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = not at all",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = very much so"
+               ]
+            },
+            {
+               "qId":"q6",
+               "qText":"During the experience I often thought that I was really standing in the virtual environment...",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = not very often",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = very much so"
+               ]
+            }
+         ]
+      }
+   ],
+   "qMessage":"You have completed the questionnaire",
+   "qAcknowledgments":"Thank you very much for taking part in the experiment! We appreciate your time!"
+}

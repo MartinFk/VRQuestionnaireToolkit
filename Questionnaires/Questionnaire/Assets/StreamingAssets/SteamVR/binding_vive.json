@@ -1,0 +1,43 @@
+{
+  "controller_type": "vive",
+  "description": "",
+  "name": "vive defaults",
+  "bindings": {
+    "/actions/default": {
+      "chords": [],
+      "sources": [
+        {
+          "path": "/user/head/proximity",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/default/in/headsetonhead"
+            }
+          }
+        }
+      ],
+      "poses": [],
+      "haptics": [],
+      "skeleton": []
+    },
+    "/actions/htc_viu": {
+      "chords": [],
+      "sources": [
+        {
+          "path": "/user/head/proximity",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_31"
+            }
+          }
+        }
+      ],
+      "poses": [],
+      "haptics": [],
+      "skeleton": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1977427656895380052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977427656895380053}
+  - component: {fileID: 1977427656895380054}
+  m_Layer: 0
+  m_Name: Pages
+  m_TagString: QuestionnaireFactory
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1977427656895380053
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977427656895380052}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2277972443843292725}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1977427656895380054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977427656895380052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b2097301ffe27e448d4950405ee4889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumPages: 0
+  CurrentPage: 0
+  PageList: []
+  PageParent: {fileID: 1977427656895380053}
+  PagePrefab: {fileID: 7637205692467773026, guid: 10ab8be59b9f9e64aaff831af8b132a3,
+    type: 3}
+  RadioHorizontalPrefab: {fileID: 8080259207330096802, guid: 9bf3cf3c1164d3e4c949e6e5325faa98,
+    type: 3}
+  RadioGridPrefab: {fileID: 1842614079482050646, guid: 31811624d9ce08a41ab7413164253db4,
+    type: 3}
+  Checkbox: {fileID: 937513242321453668, guid: 3ab323f41e122204bb11120c9acf74b1, type: 3}
+  CheckboxGrid: {fileID: 0}
+  Dropdown: {fileID: 1879506780234512771, guid: 0ec0426addea2e143816ae67b6612e2b,
+    type: 3}
+  LinearGrid: {fileID: 2972589160377234563, guid: 897062dcf793b6e498aa373709935e7c,
+    type: 3}
+  LinearSlider: {fileID: 612815703750064148, guid: 7afcf38b0e42b34449c22a5d25cd7a73,
+    type: 3}
+  TextInput: {fileID: 0}
+  LastPagePrefab: {fileID: 7585923087694151227, guid: 1b2cccbd184a3564e9f805c7d4321290,
+    type: 3}
+--- !u!1 &1977427658288308199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2277972443843292725}
+  m_Layer: 0
+  m_Name: Questionnaire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2277972443843292725
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977427658288308199}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1977427656895380053}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 35}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

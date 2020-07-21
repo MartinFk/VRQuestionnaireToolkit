@@ -1,0 +1,82 @@
+{
+  "controller_type": "vive_tracker_camera",
+  "description": "",
+  "name": "tracker_forcamera",
+  "bindings": {
+    "/actions/mixedreality": {
+      "chords": [],
+      "sources": [],
+      "poses": [
+        {
+          "output": "/actions/mixedreality/in/ExternalCamera",
+          "path": "/user/camera/pose/raw"
+        }
+      ],
+      "haptics": [],
+      "skeleton": []
+    },
+    "/actions/htc_viu": {
+      "chords": [],
+      "sources": [
+        {
+          "path": "/user/camera/input/power",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_00"
+            }
+          }
+        },
+        {
+          "path": "/user/camera/input/trigger",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_33"
+            }
+          }
+        },
+        {
+          "path": "/user/camera/input/grip",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_02"
+            }
+          }
+        },
+        {
+          "path": "/user/camera/input/application_menu",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_01"
+            }
+          }
+        },
+        {
+          "path": "/user/camera/input/thumb",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_32"
+            }
+          }
+        }
+      ],
+      "poses": [],
+      "haptics": [
+        {
+          "output": "/actions/htc_viu/out/viu_vib_01",
+          "path": "/user/camera/output/haptic"
+        }
+      ],
+      "skeleton": []
+    }
+  }
+}
