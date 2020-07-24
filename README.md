@@ -1,5 +1,10 @@
 # VRQuestionnaireToolkit
 
+| VRMode | DesktopMode |
+| ----------- | ----------- |
+| ![VRMode](http://martinfeick.com/wp-content/uploads/2020/07/VR_Mode.gif)      | ![DesktopMode](http://martinfeick.com/wp-content/uploads/2020/07/DesktopMode.gif)      |
+
+
 This repository hosts the open-source VRQuestionnaireToolkit developed to ease assessing subjective measurements in Virtual Reality. It comes with an easy-to-use Unity3D package which can be integrated in existing projects.
 
 This work is provided under a MIT License.
