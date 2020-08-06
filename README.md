@@ -27,7 +27,7 @@ We greatly appreciate any contributions and pull-requests.
 - Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/integration.zip"> Integration </a><br>
 - Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip"> Standalone </a><br>
 - JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip">json samples</a><br>
-- Pre-print: 
+- Paper: <a href="https://uist.acm.org/uist2020/"> UIST 20 - Extended Abstracts (to appear) </a><br>
 
 ## Requirements
 - Unity3D 2019.x.x (https://unity.com/) -> tested on several 2019.2 and 2019.3 versions
