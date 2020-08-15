@@ -28,6 +28,8 @@ We greatly appreciate any contributions and pull-requests.
 - Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip"> Standalone </a><br>
 - JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip">json samples</a><br>
 - Paper: <a href="https://uist.acm.org/uist2020/"> UIST 20 - Extended Abstracts (to appear) </a><br>
+- Pre-print: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRQuestionnaireToolkit.pdf">Pre-Print</a><br>
+- Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4">Video</a><br>
 
 ## Requirements
 - Unity3D 2019.x.x (https://unity.com/) -> tested on several 2019.2 and 2019.3 versions
