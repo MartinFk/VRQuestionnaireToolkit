@@ -9,7 +9,7 @@ This repository hosts the open-source VRQuestionnaireToolkit developed to ease a
 
 This work is provided under a MIT License.
 
-Please adequately cite this work, and show us your amazing projects!
+Please adequately <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib"> cite</a> this work, and show us your amazing projects!
 
 We greatly appreciate any contributions and pull-requests.
 
@@ -28,6 +28,7 @@ We greatly appreciate any contributions and pull-requests.
 - Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip"> Standalone </a><br>
 - JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip">json samples</a><br>
 - Paper: <a href="https://uist.acm.org/uist2020/"> UIST 20 - Extended Abstracts (to appear) </a><br>
+- BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib"> VRQuestionnaireToolkit.bib</a><br>
 - Pre-print: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRQuestionnaireToolkit.pdf">Pre-Print</a><br>
 - Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4">Video</a><br>
 
