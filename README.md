@@ -5,7 +5,7 @@
 | ![VRMode](http://martinfeick.com/wp-content/uploads/2020/07/VR_Mode.gif)      | ![DesktopMode](http://martinfeick.com/wp-content/uploads/2020/07/DesktopMode.gif)      |
 
 
-This repository hosts the open-source VRQuestionnaireToolkit developed to ease assessing subjective measurements in Virtual Reality. It comes with an easy-to-use Unity3D package which can be integrated in existing projects.
+This repository hosts the open-source VRQuestionnaireToolkit developed to ease assessing subjective measurements in Virtual Reality. It comes with an easy-to-use Unity3D package which can be integrated in existing projects, and supports pre-, in situ and post-study questionnaires.
 
 This work is provided under a MIT License.
 
@@ -27,7 +27,7 @@ We greatly appreciate any contributions and pull-requests.
 - Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/integration.zip"> Integration </a><br>
 - Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip"> Standalone </a><br>
 - JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip">json samples</a><br>
-- Paper: <a href="https://uist.acm.org/uist2020/"> UIST 20 - Extended Abstracts (to appear) </a><br>
+- Paper: <a href="https://dl.acm.org/doi/abs/10.1145/3379350.3416188"> UIST 20 - Extended Abstracts</a><br>
 - BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib"> VRQuestionnaireToolkit.bib</a><br>
 - Pre-print: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRQuestionnaireToolkit.pdf">Pre-Print</a><br>
 - Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4">Video</a><br>
