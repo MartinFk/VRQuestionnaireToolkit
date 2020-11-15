@@ -1,4 +1,4 @@
-<img src="http://martinfeick.com/wp-content/uploads/2020/11/vrquestionnairetoolkit2020-7.png">
+<img src="http://martinfeick.com/wp-content/uploads/2020/11/vrquestionnairetoolkit.png">
 
 | VRMode | DesktopMode |
 | ----------- | ----------- |
