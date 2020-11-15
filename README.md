@@ -1,4 +1,4 @@
-# VRQuestionnaireToolkit
+<img src="http://martinfeick.com/wp-content/uploads/2020/11/vrquestionnairetoolkit2020-7.png">
 
 | VRMode | DesktopMode |
 | ----------- | ----------- |
@@ -11,12 +11,27 @@ This work is provided under a MIT License.
 
 Please adequately <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib"> cite</a> this work, and show us your amazing projects!
 
+```
+@inproceedings{feick2020vrqt,
+author = {Feick, Martin and Kleer, Niko and Tang, Anthony and Kr\"{u}ger, Antonio},
+title = {The Virtual Reality Questionnaire Toolkit},
+year = {2020},
+isbn = {9781450375153},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3379350.3416188},
+doi = {10.1145/3379350.3416188},
+location = {Virtual Event, USA},
+series = {UIST '20 Adjunct}
+}
+```
+
 We greatly appreciate any contributions and pull-requests.
 
 
 ## Features
 1. Plug & Play integration.
-2. Supports Desktop (no VR required) & Virtual Reality mode (Vive standard controller).
+2. Supports Desktop (no VR required) & Virtual Reality mode (HTC VIVE or Oculus controller).
 3. Works as build and in editor.
 4. Comes with six standard questionnaire types.
 5. NASA TLX, Simulation Sickness Questionnaire, IPQ and SUS Presence Questionnaire as well as System Usability Scale (SUS) already included.
@@ -34,7 +49,7 @@ We greatly appreciate any contributions and pull-requests.
 
 ## Requirements
 - Unity3D 2019.x.x (https://unity.com/) -> tested on several 2019.2 and 2019.3 versions
-- SteamVR (Vive) (https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647)
+- SteamVR (https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647)
 - Vive Input Utility (https://assetstore.unity.com/packages/tools/integration/vive-input-utility-64219)
 
 ## How To Get Started
@@ -404,14 +419,13 @@ _path = _folderPath + "questionnaireID_" + _questionnaireID + "_participantID_" 
 
 
 ## Known Issues
-1) Do not use your selected delimiter ( "," by default) in your question
-2) When HTC Vive connected, Desktop mode does not work (restart Unity3D required)
+1) Do not use your selected delimiter (e.g. ",") in your question
+2) When VR headset is connected, Desktop mode does not work (restart Unity3D required)
 3) Large/Small Vive laser dot -> dis-/enable rectile autoscale in VivePointers Right and Left
 
 ## Work in Progress
 1) Add additional standardized questionnaires
-2) Support "effective" text input
-3) Oculus support
+2) Tactile/Sound feedback
 
 ## Issues
 If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us under martin.feick@dfki.de.
