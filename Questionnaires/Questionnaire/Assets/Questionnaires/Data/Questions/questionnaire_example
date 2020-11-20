@@ -10,7 +10,7 @@
          "qData":[
             {
                "qId":"q1",
-               "qText":"UIST, is an amazing conference",
+               "qText":"UIST is an amazing conference",
                "qMandatory":"false",
                "qOptions":[
                   "",
@@ -24,7 +24,7 @@
             },
             {
                "qId":"q2",
-               "qText":"VR is a beautiful, research tool",
+               "qText":"VR is a beautiful research tool",
                "qMandatory":"false",
                "qOptions":[
                   "",
@@ -55,7 +55,7 @@
       {
          "pId":"page2",
          "qType":"radio",
-         "qInstructions":"Choose, an option...",
+         "qInstructions":"Choose an option...",
          "qData":[
             {
                "qId":"q1",
@@ -145,7 +145,7 @@
          "qType":"radioGrid",
          "qInstructions":"Choose one option for each condition",
          "qOptions":[
-		    "Strongly, Disagree",
+		    "Strongly Disagree",
 			"Disagree",
             "Somewhat Disagree",
             "Neutral",
@@ -185,16 +185,16 @@
          "qInstructions":"Choose all options that apply",
          "qOptions":[
             "It's too expensive",
-            "The technology, isn't that good yet ",
+            "The technology isn't that good yet ",
             "There is not enough content and/or games ",
             "I don't like wearing the headset ",
-            "The experience, isn't immersive enough",
+            "The experience isn't immersive enough",
             "The experience isn't better than traditional gaming"
          ],
          "qData":[
             {
                "qId":"q1",
-               "qText":" If you don’t use VR frequently, what is keeping you from adopting this?",
+               "qText":" If you don’t use VR frequently; what is keeping you from adopting this?",
                "qMandatory":"true"
             }
          ]
