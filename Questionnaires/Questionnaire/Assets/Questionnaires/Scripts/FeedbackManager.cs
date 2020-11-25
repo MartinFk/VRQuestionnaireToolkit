@@ -20,37 +20,22 @@ namespace VRQuestionnaireToolkit
 
         // To later access the boolean state of tactile/sound feedback.
         private StudySetup _studySetup;
+        private AudioSource _audioSource;
+        private AudioClip _hoverSoundClip;
 
 
         void Start()
         {
-            _studySetup = GameObject.FindGameObjectWithTag("VRQuestionnaireToolkit").GetComponent<StudySetup>();
-
-            AddHoveringListener();
-        }
-
-        void Update()
-        {
-            //// Test test
-            //if (Input.GetKeyDown(KeyCode.LeftArrow))
-            //    Pulse(SteamVR_Input_Sources.LeftHand);
-            //if (Input.GetKeyDown(KeyCode.RightArrow))
-            //    Pulse(SteamVR_Input_Sources.RightHand);
+            GameObject _vrToolkit = GameObject.FindGameObjectWithTag("VRQuestionnaireToolkit");
+            _studySetup = _vrToolkit.GetComponent<StudySetup>();
+            _audioSource = _studySetup.GetComponent<AudioSource>();
+            _hoverSoundClip = _studySetup.hoverSoundClip;
+            AddTriggerListener();
         }
 
         public void Pulse(SteamVR_Input_Sources source)
         {
-            if (_studySetup.ControllerTactileFeedbackOnOff) hapticAction.Execute(0, _duration, _frequency, _amplitude, source);
-        }
-
-        public void PulseLeft()
-        {
-            Pulse(SteamVR_Input_Sources.LeftHand);
-        }
-
-        public void PulseRight()
-        {
-            Pulse(SteamVR_Input_Sources.RightHand);
+            hapticAction.Execute(0, _duration, _frequency, _amplitude, source);
         }
 
         public void PulseBothHands()
@@ -59,16 +44,29 @@ namespace VRQuestionnaireToolkit
             Pulse(SteamVR_Input_Sources.RightHand);
         }
 
-
         // Add a listener to the hovering event over the current element.  
-        public void AddHoveringListener()
+        public void AddTriggerListener()
         {
             gameObject.AddComponent<EventTrigger>();
             EventTrigger trigger = GetComponent<EventTrigger>();
-            EventTrigger.Entry entry = new EventTrigger.Entry();
-            entry.eventID = EventTriggerType.PointerEnter;
-            entry.callback.AddListener((data) => { PulseBothHands(); });
-            trigger.triggers.Add(entry);
+            EventTrigger.Entry entryHovering = new EventTrigger.Entry();
+            entryHovering.eventID = EventTriggerType.PointerEnter;  // Adding hovering listener
+            entryHovering.callback.AddListener((data) => { OnHovering(); });
+            trigger.triggers.Add(entryHovering);
+        }
+
+        public void OnHovering()
+        {
+            if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
+            {
+                PulseBothHands();
+            }
+            if (_studySetup.SoundOnOff)
+            {
+                _audioSource.PlayOneShot(_hoverSoundClip);
+                // Debug.Log("Beep!");
+            }
+                
         }
 
     }

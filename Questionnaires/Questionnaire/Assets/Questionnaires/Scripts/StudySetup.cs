@@ -21,7 +21,9 @@ namespace VRQuestionnaireToolkit
         [Tooltip("Switch on/off tactile feedback.")]
         public bool ControllerTactileFeedbackOnOff = true;
         [Tooltip("Switch on/off sound feedback.")]
-        private bool SoundOnOff;
+        public bool SoundOnOff;
+        [Tooltip("Choose the audio file to play upon hovering over a button.")]
+        public AudioClip hoverSoundClip;
 
         void Update()
         {
