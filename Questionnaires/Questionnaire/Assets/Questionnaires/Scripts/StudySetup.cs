@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// StudySetup.class
@@ -15,19 +16,13 @@ namespace VRQuestionnaireToolkit
 {
     public class StudySetup : MonoBehaviour
     {
-        // Start is called before the first frame update
         public string ParticipantId;
         public string Condition;
-        private bool ControllerTactileFeedbackOnOff;
+        [Tooltip("Switch on/off tactile feedback.")]
+        public bool ControllerTactileFeedbackOnOff = true;
+        [Tooltip("Switch on/off sound feedback.")]
         private bool SoundOnOff;
 
-
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
         void Update()
         {
             AdjustTransform(); 

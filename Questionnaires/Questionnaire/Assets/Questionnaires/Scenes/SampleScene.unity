@@ -278,79 +278,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &893710873
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 893710876}
-  - component: {fileID: 893710875}
-  - component: {fileID: 893710874}
-  m_Layer: 0
-  m_Name: Feedback Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &893710874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893710873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27991c206a5e66147bb8ee3ef31c8bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionSet:
-    actionSetPath: /actions/default
-  forSources: 0
-  disableAllOtherActionSets: 0
-  activateOnStart: 1
-  deactivateOnDestroy: 1
---- !u!114 &893710875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893710873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ad5df255829514c90128aed693f12b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hapticFeedback: 1
-  soundFeedback: 1
-  _duartion: 0.1
-  _frequency: 1
-  _amplitude: 5
-  hapticAction:
-    actionPath: /actions/default/out/Haptic
-    needsReinit: 0
-  trackpadAction:
-    actionPath: /actions/default/in/Teleport
-    needsReinit: 0
---- !u!4 &893710876
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893710873}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1383332835
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +451,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1016164502312608958, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: ParticipantId
@@ -533,6 +465,16 @@ PrefabInstance:
         type: 3}
       propertyPath: Condition
       value: A
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: ControllerTactileFeedbackOnOff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: SoundOnOff
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259617, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -662,12 +604,12 @@ PrefabInstance:
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: FileName
-      value: test_semicolon_as_delimiter
+      value: test1125
       objectReference: {fileID: 0}
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: StorePath
-      value: /Questionnaires/Data/Answers/_test_comma_issue/
+      value: /Questionnaires/Data/Answers/test1125/
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93494b0f3d397d74ba1458871f004384, type: 3}
