@@ -39,13 +39,13 @@ We greatly appreciate any contributions and pull-requests.
 7. Fully compatible with other frameworks 
 
 ## Downloads
-- Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/integration.zip" target="_blank"> Integration </a><br>
-- Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip" target="_blank"> Standalone </a><br>
-- JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip" target="_blank">json samples</a><br>
-- Paper: <a href="https://dl.acm.org/doi/abs/10.1145/3379350.3416188" target="_blank"> UIST 20 - Extended Abstracts</a><br>
-- BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib" target="_blank"> VRQuestionnaireToolkit.bib</a><br>
-- Pre-print: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRQuestionnaireToolkit.pdf" target="_blank">Pre-Print</a><br>
-- Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4" target="_blank">Video</a><br>
+- Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/integration.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
+- Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
+- JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip" target="_blank" rel="noopener noreferrer">json samples</a><br>
+- Paper: <a href="https://dl.acm.org/doi/abs/10.1145/3379350.3416188" target="_blank" rel="noopener noreferrer"> UIST 20 - Extended Abstracts</a><br>
+- BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib" target="_blank" rel="noopener noreferrer"> VRQuestionnaireToolkit.bib</a><br>
+- Pre-print: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRQuestionnaireToolkit.pdf" target="_blank" rel="noopener noreferrer">Pre-Print</a><br>
+- Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4" target="_blank" rel="noopener noreferrer">Video</a><br>
 
 ## Requirements
 - Unity3D 2019.x.x (https://unity.com/) -> tested on several 2019.2 and 2019.3 versions
