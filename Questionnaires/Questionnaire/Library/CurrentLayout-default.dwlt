@@ -137,7 +137,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 104
+  controlID: 127
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 110
+  controlID: 58
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 222}
   m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 111
+  controlID: 59
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -235,8 +235,8 @@ MonoBehaviour:
     y: 0
     width: 251
     height: 675
-  m_MinSize: {x: 204, y: 222}
-  m_MaxSize: {x: 4004, y: 4022}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -288,8 +288,8 @@ MonoBehaviour:
     y: 0
     width: 399
     height: 947
-  m_MinSize: {x: 277, y: 72}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -530,9 +530,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6c3c0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 18fbffff42fbffff60fbffff68fbffff76fbffff
+      m_SelectedIDs: f4efffff
+      m_LastClickedID: -4108
+      m_ExpandedIDs: 08f0ffffe8f0ffffeaf0ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -595,20 +595,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Questionnaires/Data/Questions
+    - Assets/Questionnaires/Data/Answers
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Questionnaires/Data/Questions
+  - Assets/Questionnaires/Data/Answers
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Martin\Downloads\QE\Questionnaires\Questionnaire
+  m_LastProjectPath: C:\Users\Martin\Desktop\VRQuestionnaireToolkit\Questionnaires\Questionnaire
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ec340000
-    m_LastClickedID: 13548
-    m_ExpandedIDs: 00000000a831000048320000143300002a330000443400009a340000ee34000092360000c6370000c8380000d2390000f2390000303a00003a3a00005c3a0000fc3a0000a23c0000da3c000000ca9a3b
+    scrollPos: {x: 0, y: 111}
+    m_SelectedIDs: ea4b0000
+    m_LastClickedID: 19434
+    m_ExpandedIDs: 00000000c44700004c4800000649000016490000084a0000564a00009e4a0000de4b0000de4c0000ae4d0000884e0000a24e0000d64e0000e04e0000024f00008a4f0000e65000000c51000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -636,7 +636,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a831000048320000143300002a330000443400009a340000ee34000092360000c6370000c8380000d2390000f2390000303a00003a3a00005c3a0000a23c0000da3c0000
+    m_ExpandedIDs: 00000000c44700004c4800000649000016490000084a0000564a00009e4a0000de4b0000de4c0000ae4d0000884e0000a24e0000d64e0000e04e0000024f0000e65000000c510000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
