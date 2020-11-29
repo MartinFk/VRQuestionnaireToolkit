@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1785
     y: 0
     width: 761
@@ -153,6 +154,16 @@ MonoBehaviour:
   - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 1
+=======
+    x: 0
+    y: 30
+    width: 1920
+    height: 947
+  m_MinSize: {x: 683, y: 494}
+  m_MaxSize: {x: 14004, y: 14044}
+  vertical: 0
+  controlID: 127
+>>>>>>> dev
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,6 +181,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 380
     height: 364
   m_MinSize: {x: 200, y: 200}
@@ -179,6 +191,14 @@ MonoBehaviour:
   - {fileID: 21}
   m_Selected: 0
   m_LastSelected: 0
+=======
+    width: 1521
+    height: 947
+  m_MinSize: {x: 406, y: 494}
+  m_MaxSize: {x: 10002, y: 14044}
+  vertical: 1
+  controlID: 58
+>>>>>>> dev
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,6 +215,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 873
     width: 1785
     height: 420
@@ -206,6 +227,15 @@ MonoBehaviour:
   - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 1
+=======
+    y: 0
+    width: 1521
+    height: 675
+  m_MinSize: {x: 406, y: 222}
+  m_MaxSize: {x: 8006, y: 4022}
+  vertical: 0
+  controlID: 59
+>>>>>>> dev
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,11 +277,23 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 2546
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
+=======
+    width: 251
+    height: 675
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> dev
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -292,12 +334,24 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1785
     height: 1293
   m_MinSize: {x: 633, y: 592}
   m_MaxSize: {x: 18003, y: 18042}
   vertical: 1
   controlID: 147
+=======
+    width: 399
+    height: 947
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> dev
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -458,7 +512,40 @@ MonoBehaviour:
     width: 667
     height: 852
   m_ViewDataDictionary: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &19
+=======
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: f4efffff
+      m_LastClickedID: -4108
+      m_ExpandedIDs: 08f0ffffe8f0ffffeaf0ffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 10}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: aac35c12fdb0d3145bb1b07441c2a763
+--- !u!114 &17
+>>>>>>> dev
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -497,10 +584,15 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Questionnaires/Prefabs/Types/linearSlider
+=======
+    - Assets/Questionnaires/Data/Answers
+>>>>>>> dev
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Questionnaires/Prefabs/Types/linearSlider
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\CharlieThesis\UnityProjects\VRQuestionnaireToolkit\Questionnaires\Questionnaire
@@ -511,6 +603,18 @@ MonoBehaviour:
     m_SelectedIDs: 263f0000
     m_LastClickedID: 16166
     m_ExpandedIDs: 00000000d63e0000d83e0000da3e0000dc3e0000de3e0000e03e0000e23e0000e43e0000e63e0000e83e0000ea3e0000ec3e0000ee3e0000fc3e0000063f0000fe42000000ca9a3b
+=======
+  - Assets/Questionnaires/Data/Answers
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\Martin\Desktop\VRQuestionnaireToolkit\Questionnaires\Questionnaire
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 111}
+    m_SelectedIDs: ea4b0000
+    m_LastClickedID: 19434
+    m_ExpandedIDs: 00000000c44700004c4800000649000016490000084a0000564a00009e4a0000de4b0000de4c0000ae4d0000884e0000a24e0000d64e0000e04e0000024f00008a4f0000e65000000c51000000ca9a3b
+>>>>>>> dev
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -538,7 +642,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000d63e0000d83e0000da3e0000dc3e0000de3e0000e03e0000e23e0000e43e0000e63e0000e83e0000ea3e0000ec3e0000ee3e0000
+=======
+    m_ExpandedIDs: 00000000c44700004c4800000649000016490000084a0000564a00009e4a0000de4b0000de4c0000ae4d0000884e0000a24e0000d64e0000e04e0000024f0000e65000000c510000
+>>>>>>> dev
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

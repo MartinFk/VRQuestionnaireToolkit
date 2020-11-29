@@ -1,6 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 15791c93b9d9b1d44afc3c854b83e2d7
 TextScriptImporter:
+=======
+<<<<<<< HEAD:Questionnaires/Questionnaire/Assets/Resources/Sounds.meta
+guid: b23a1aba52268ee4998e5bf1ec4027eb
+folderAsset: yes
+DefaultImporter:
+=======
+guid: 7e509a1aff4194e4c9b2ac5b1cba1995
+TextScriptImporter:
+>>>>>>> dev:Questionnaires/Questionnaire/Assets/Questionnaires/Data/Answers/questionnaireID_exampleQE_participantID_id1_condition_A_answers.csv.meta
+>>>>>>> dev
   externalObjects: {}
   userData: 
   assetBundleName: 

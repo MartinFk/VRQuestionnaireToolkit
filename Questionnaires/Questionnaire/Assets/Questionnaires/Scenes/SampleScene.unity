@@ -600,6 +600,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Delimiter
       value: ;
+<<<<<<< HEAD
       objectReference: {fileID: 0}
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -610,6 +611,8 @@ PrefabInstance:
         type: 3}
       propertyPath: StorePath
       value: /Questionnaires/Data/Answers/
+=======
+>>>>>>> dev
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93494b0f3d397d74ba1458871f004384, type: 3}
