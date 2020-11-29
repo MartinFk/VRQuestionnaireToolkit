@@ -48,7 +48,7 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 - Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4" target="_blank" rel="noopener noreferrer">Video</a><br>
 
 ## Requirements
-- Unity3D 2019.x.x (https://unity.com/) -> tested on several 2019.2 and 2019.3 versions
+- Unity3D 2019.x.x (https://unity.com/) -> tested on several 2019.2, 2019.3 and 2019.4 versions
 - SteamVR (https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647)
 - Vive Input Utility (https://assetstore.unity.com/packages/tools/integration/vive-input-utility-64219)
 
