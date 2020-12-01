@@ -74,7 +74,7 @@
             },
             {
                "qId":"q5",
-               "qText":"I had a sense of acting in the virtual space; rather than operating something from outside...",
+               "qText":"I had a sense of acting in the virtual space, rather than operating something from outside...",
                "qMandatory":"true",
                "qOptions":[
                   "Fully disagree",
@@ -110,7 +110,7 @@
          "qData":[
             {
                "qId":"q7",
-               "qText":"How aware were you of the real world surrounding while navigating in the virtual world? (i.e. sounds; room temperature; other people; etc.)?",
+               "qText":"How aware were you of the real world surrounding while navigating in the virtual world? (i.e. sounds, room temperature, other people, etc.)?",
                "qMandatory":"true",
                "qOptions":[
                   "Extremely aware",
