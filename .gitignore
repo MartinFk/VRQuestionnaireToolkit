@@ -3,12 +3,12 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 Questionnaires/Questionnaire/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+Questionnaires/Questionnaire/[Tt]emp/
+Questionnaires/Questionnaire/[Oo]bj/
+Questionnaires/Questionnaire/[Bb]uild/
+Questionnaires/Questionnaire/[Bb]uilds/
+Questionnaires/Questionnaire/[Ll]ogs/
+Questionnaires/Questionnaire/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
