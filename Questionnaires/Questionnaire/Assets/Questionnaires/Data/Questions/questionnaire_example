@@ -194,7 +194,7 @@
          "qData":[
             {
                "qId":"q1",
-               "qText":" If you don’t use VR frequently, what is keeping you from adopting this?",
+               "qText":" If you don’t use VR frequently; what is keeping you from adopting this?",
                "qMandatory":"true"
             }
          ]

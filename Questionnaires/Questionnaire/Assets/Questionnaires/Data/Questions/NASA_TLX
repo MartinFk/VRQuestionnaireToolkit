@@ -62,7 +62,7 @@
             },
             {
                "qId":"g6",
-               "qText":"Frustration:  How insecure, discouraged, irritated, stressed, and annoyed were you?",
+               "qText":"Frustration:  How insecure; discouraged; irritated; stressed; and annoyed were you?",
                "qMandatory":"true",
                "qMin":"0",
                "qMinLabel":"Low",
