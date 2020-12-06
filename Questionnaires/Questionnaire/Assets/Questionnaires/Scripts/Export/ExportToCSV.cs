@@ -68,6 +68,20 @@ namespace VRQuestionnaireToolkit
         {
             _folderPath = UseGlobalPath ? StorePath : Application.dataPath + StorePath;
 
+            // Create a new folder if the specified folder does not exist.
+            try
+            {
+                if (!Directory.Exists(_folderPath))
+                {
+                    Directory.CreateDirectory(_folderPath);
+                    Debug.LogWarning("Folder path does not exist! New folder created at " + _folderPath);
+                }
+            }
+            catch (IOException ex)
+            {
+                Debug.Log(ex.Message);
+            }
+
             int currentQuestionnaire = 1;
 
             for (int i = 0; i < _vrQuestionnaireToolkit.GetComponent<GenerateQuestionnaire>().Questionnaires.Count; i++)
