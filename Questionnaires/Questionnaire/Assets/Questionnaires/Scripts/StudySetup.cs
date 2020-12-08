@@ -19,12 +19,32 @@ namespace VRQuestionnaireToolkit
     {
         public string ParticipantId;
         public string Condition;
+
         [Tooltip("Switch on/off tactile feedback.")]
         public bool ControllerTactileFeedbackOnOff = true;
         [Tooltip("Switch on/off sound feedback.")]
-        public bool SoundOnOff;
+        public bool SoundOnOff = true;
+
+        [Header("Customize feedback parameters on hovering:")]
+        [Range(0, 1)]
+        public float vibratingDurationHovering = 0.05f;
+        [Range(0, 200)]
+        public float vibratingFrequencyHovering = 1.0f;
+        [Range(0, 100)]
+        public float vibratingAmplitudeHovering = 5.0f;
         [Tooltip("Choose the audio file to play upon hovering over a button.")]
-        public AudioClip hoverSoundClip;
+        public AudioClip soundClipHovering;
+
+        [Header("Customize feedback parameters on selecting:")]
+        [Range(0, 1)]
+        public float vibratingDurationSelecting = 0.05f;
+        [Range(0, 200)]
+        public float vibratingFrequencySelecting = 200.0f;
+        [Range(0, 100)]
+        public float vibratingAmplitudeSelecting = 1.0f;
+        [Tooltip("Choose the audio file to play upon selecting on a button.")]
+        public AudioClip soundClipSelecting;
+
 
         [Space(20)]
         [Tooltip("Remember the position, rotation and scale of the questionnaire panel after adjusting it." +

@@ -8,12 +8,12 @@ namespace VRQuestionnaireToolkit
 {
     public class FeedbackManager : MonoBehaviour
     {
-        [Range(0, 1)]
-        public float _duration = 0.1f;
-        [Range(0, 200)]
-        public float _frequency = 1.0f;
-        [Range(0, 100)]
-        public float _amplitude = 5.0f;
+        //[Range(0, 1)]
+        //public float _duration = 0.05f;
+        //[Range(0, 200)]
+        //public float _frequency = 1.0f;
+        //[Range(0, 100)]
+        //public float _amplitude = 5.0f;
 
         
         public SteamVR_Action_Vibration hapticAction;
@@ -22,6 +22,7 @@ namespace VRQuestionnaireToolkit
         private StudySetup _studySetup;
         private AudioSource _audioSource;
         private AudioClip _hoverSoundClip;
+        private AudioClip _selectSoundClip;
 
 
         void Start()
@@ -29,44 +30,63 @@ namespace VRQuestionnaireToolkit
             GameObject _vrToolkit = GameObject.FindGameObjectWithTag("VRQuestionnaireToolkit");
             _studySetup = _vrToolkit.GetComponent<StudySetup>();
             _audioSource = _studySetup.GetComponent<AudioSource>();
-            _hoverSoundClip = _studySetup.hoverSoundClip;
+            _hoverSoundClip = _studySetup.soundClipHovering;
+            _selectSoundClip = _studySetup.soundClipSelecting;
             AddTriggerListener();
         }
 
-        public void Pulse(SteamVR_Input_Sources source)
+        //public void Pulse(SteamVR_Input_Sources source)
+        //{
+        //    //hapticAction.Execute(0, _duration, _frequency, _amplitude, source);
+        //    hapticAction.Execute(0, _studySetup.duration, _studySetup.frequency, _studySetup.amplitude, source);
+        //}
+
+        public void PulseBothHands(float duration, float frequency, float amplitude)
         {
-            hapticAction.Execute(0, _duration, _frequency, _amplitude, source);
+            hapticAction.Execute(0, duration, frequency, amplitude, SteamVR_Input_Sources.LeftHand);
+            hapticAction.Execute(0, duration, frequency, amplitude, SteamVR_Input_Sources.RightHand);
         }
 
-        public void PulseBothHands()
-        {
-            Pulse(SteamVR_Input_Sources.LeftHand);
-            Pulse(SteamVR_Input_Sources.RightHand);
-        }
-
-        // Add a listener to the hovering event over the current element.  
+        // To add listeners to the hovering event over the current element.  
         public void AddTriggerListener()
         {
             gameObject.AddComponent<EventTrigger>();
             EventTrigger trigger = GetComponent<EventTrigger>();
-            EventTrigger.Entry entryHovering = new EventTrigger.Entry();
-            entryHovering.eventID = EventTriggerType.PointerEnter;  // Adding hovering listener
+
+            // Adding hovering listener
+            EventTrigger.Entry entryHovering = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
             entryHovering.callback.AddListener((data) => { OnHovering(); });
             trigger.triggers.Add(entryHovering);
+
+            // Adding selecting listener
+            EventTrigger.Entry entrySelecting = new EventTrigger.Entry { eventID = EventTriggerType.Select };
+            entrySelecting.callback.AddListener((data) => { OnSelecting(); });
+            trigger.triggers.Add(entrySelecting);
         }
 
         public void OnHovering()
         {
             if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
             {
-                PulseBothHands();
+                PulseBothHands(_studySetup.vibratingDurationHovering, _studySetup.vibratingFrequencyHovering, _studySetup.vibratingAmplitudeHovering);
             }
-            if (_studySetup.SoundOnOff)
+            if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
                 _audioSource.PlayOneShot(_hoverSoundClip);
-                // Debug.Log("Beep!");
             }
                 
+        }
+
+        public void OnSelecting()
+        {
+            if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
+            {
+                PulseBothHands(_studySetup.vibratingDurationSelecting, _studySetup.vibratingFrequencySelecting, _studySetup.vibratingAmplitudeSelecting);
+            }
+            if (_studySetup.SoundOnOff) // If sound feedback is switched on
+            {
+                _audioSource.PlayOneShot(_selectSoundClip);
+            }
         }
 
     }
