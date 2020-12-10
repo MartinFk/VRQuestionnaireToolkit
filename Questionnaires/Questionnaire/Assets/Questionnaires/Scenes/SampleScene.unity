@@ -654,7 +654,7 @@ PrefabInstance:
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: FileName
-      value: 
+      value: example-answer-sheet
       objectReference: {fileID: 0}
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}

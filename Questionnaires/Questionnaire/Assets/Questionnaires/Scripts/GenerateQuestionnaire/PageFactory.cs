@@ -197,7 +197,7 @@ namespace VRQuestionnaireToolkit
                             textArray[0].transform.localPosition = new Vector3(0, 120, textArray[0].transform.localPosition.z);
 
                             SetRec(radioHorizontalRec);
-                            QuestionList.Add(temp.GetComponent<RadioGrid>().CreateRadioGridQuestion(qId, qType, qInstructions, _qData[i][0],
+                            QuestionList.Add(temp.GetComponent<RadioGrid>().CreateRadioGridQuestion(qId, qType, qInstructions, _qData[0][0],
                                 _qData[0][1], _qData[0][2].AsBool, qOptions, qConditions[i][1], i, radioHorizontalRec));
                         }
                     }
