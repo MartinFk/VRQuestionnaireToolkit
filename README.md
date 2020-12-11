@@ -62,7 +62,7 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 (For existing projects, please see <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki/%F0%9F%9B%A0%EF%B8%8FIntegration-&-Event-Subscription"> Wiki/Integration</a>)
 
 ## Documentation
-Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki 📘</a>  for full documentation.
+Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki 📘</a>  for full documentation and more information.
 
 ## Known Issues
 1) Do not use your selected delimiter (e.g. ";") in your question
