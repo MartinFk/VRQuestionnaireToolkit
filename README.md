@@ -62,7 +62,7 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 (For existing projects, please see Wiki/Integration)
 
 ## Documentation
-Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki</a>📘 for full documentation.
+Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki</a> 📘 for full documentation.
 
 ## Known Issues
 1) Do not use your selected delimiter (e.g. ";") in your question
