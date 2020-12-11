@@ -30,23 +30,23 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 
 
 ## Features
-1. Plug & Play integration.
-2. Supports Desktop (no VR required) & Virtual Reality mode (HTC VIVE or Oculus controller).
-3. Works as build and in editor.
-4. Comes with six standard questionnaire types.
-5. NASA TLX, Simulation Sickness Questionnaire, IPQ and SUS Presence Questionnaire as well as System Usability Scale (SUS) already included.
-6. Auto-export as .csv or .txt file.
-7. Fully compatible with other frameworks 
-8. Customizable tactile and sound feedback
+1. ⚡Plug & Play integration.
+2. 🚩Supports Desktop (no VR required) & Virtual Reality mode (HTC VIVE or Oculus controller).
+3. ☀️Works as build and in editor.
+4. 👓Comes with six standard questionnaire types.
+5. 📙NASA TLX, Simulation Sickness Questionnaire, IPQ and SUS Presence Questionnaire as well as System Usability Scale (SUS) already included.
+6. 📁Auto-export as .csv or .txt file.
+7. 🍏Fully compatible with other frameworks.
+8. 🍒Customizable tactile and sound feedback.
 
 ## Downloads
-- Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/integration.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
-- Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
-- JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip" target="_blank" rel="noopener noreferrer">json samples</a><br>
-- Paper: <a href="https://dl.acm.org/doi/abs/10.1145/3379350.3416188" target="_blank" rel="noopener noreferrer"> UIST 20 - Extended Abstracts</a><br>
-- BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib" target="_blank" rel="noopener noreferrer"> VRQuestionnaireToolkit.bib</a><br>
-- Pre-print: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRQuestionnaireToolkit.pdf" target="_blank" rel="noopener noreferrer">Pre-Print</a><br>
-- Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4" target="_blank" rel="noopener noreferrer">Video</a><br>
+- 🍧Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/integration.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
+- 🍪Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
+- 🔖JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip" target="_blank" rel="noopener noreferrer">json samples</a><br>
+- 🎓Paper: <a href="https://dl.acm.org/doi/abs/10.1145/3379350.3416188" target="_blank" rel="noopener noreferrer"> UIST 20 - Extended Abstracts</a><br>
+- 📋BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib" target="_blank" rel="noopener noreferrer"> VRQuestionnaireToolkit.bib</a><br>
+- 🔓Pre-print: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRQuestionnaireToolkit.pdf" target="_blank" rel="noopener noreferrer">Pre-Print</a><br>
+- 🎥Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4" target="_blank" rel="noopener noreferrer">Video</a><br>
 
 ## Requirements
 - Unity3D 2019.x.x (https://unity.com/) -> tested on several 2019.2 and 2019.3 versions
@@ -62,7 +62,7 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 (For existing projects, please see Wiki/Integration)
 
 ## Documentation
-Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki</a> for full documentation.
+Visit the 📘<a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki</a> for full documentation.
 
 ## Known Issues
 1) Do not use your selected delimiter (e.g. ";") in your question
@@ -70,7 +70,7 @@ Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wik
 3) Large/Small Vive laser dot -> dis-/enable rectile autoscale in VivePointers Right and Left
 
 ## Issues
-If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us under martin.feick@dfki.de.
+If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us 📫 under martin.feick@dfki.de.
 
 ## Dependencies 
 Simple Json Parser: https://github.com/Bunny83/SimpleJSON
