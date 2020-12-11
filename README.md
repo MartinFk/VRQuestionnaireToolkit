@@ -58,19 +58,15 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 3. Load samples scene (delete standard scene)
 4. Run Demo
 
-(For existing projects, please see Integration)
+(For existing projects, please see Wiki/Integration)
 
 ## Documentation
-Visit the Wiki for full documentation.
+Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki</a> for full documentation.
 
 ## Known Issues
 1) Do not use your selected delimiter (e.g. ",") in your question
 2) When VR headset is connected, Desktop mode does not work (restart Unity3D required)
 3) Large/Small Vive laser dot -> dis-/enable rectile autoscale in VivePointers Right and Left
-
-## Work in Progress
-1) Add additional standardized questionnaires
-2) Tactile/Sound feedback
 
 ## Issues
 If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us under martin.feick@dfki.de.
