@@ -37,6 +37,7 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 5. NASA TLX, Simulation Sickness Questionnaire, IPQ and SUS Presence Questionnaire as well as System Usability Scale (SUS) already included.
 6. Auto-export as .csv or .txt file.
 7. Fully compatible with other frameworks 
+8. Customizable tactile and sound feedback
 
 ## Downloads
 - Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/integration.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
@@ -64,7 +65,7 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki</a> for full documentation.
 
 ## Known Issues
-1) Do not use your selected delimiter (e.g. ",") in your question
+1) Do not use your selected delimiter (e.g. ";") in your question
 2) When VR headset is connected, Desktop mode does not work (restart Unity3D required)
 3) Large/Small Vive laser dot -> dis-/enable rectile autoscale in VivePointers Right and Left
 
