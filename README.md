@@ -53,13 +53,13 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 - SteamVR (https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647)
 - Vive Input Utility (https://assetstore.unity.com/packages/tools/integration/vive-input-utility-64219)
 
-## How To Get Started
+## How To Get Started ☀️
 1. Download standalone unitypackage
 2. Import package into assets folder
 3. Load samples scene (delete standard scene)
 4. Run Demo
 
-(For existing projects, please see Wiki/Integration)
+(For existing projects, please see <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki/%F0%9F%9B%A0%EF%B8%8FIntegration-&-Event-Subscription"> Wiki/Integration</a>)
 
 ## Documentation
 Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki 📘</a>  for full documentation.
