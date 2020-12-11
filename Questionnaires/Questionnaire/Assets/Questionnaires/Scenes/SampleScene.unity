@@ -476,6 +476,41 @@ PrefabInstance:
       propertyPath: SoundOnOff
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: hoverSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b660b21fad7af34e806c3f3c4eb8868, type: 3}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: rememberTransformWhenQuit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: rememberTransformValues
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: vibratingFrequencySelecting
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: vibratingAmplitudeSelecting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: soundClipHovering
+      value: 
+      objectReference: {fileID: 8300000, guid: d7d08c266925c5446947a004fde53aa0, type: 3}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: soundClipSelecting
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b660b21fad7af34e806c3f3c4eb8868, type: 3}
     - target: {fileID: 8697000387260259617, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_Name
@@ -499,17 +534,17 @@ PrefabInstance:
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -549,12 +584,12 @@ PrefabInstance:
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 600
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -586,6 +621,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259645, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: JsonInputPath_5
@@ -604,7 +654,7 @@ PrefabInstance:
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: FileName
-      value: test1125
+      value: example-answer-sheet
       objectReference: {fileID: 0}
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
