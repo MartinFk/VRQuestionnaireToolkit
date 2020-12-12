@@ -32,11 +32,11 @@ We greatly appreciate any contributions and pull-requests (please submit to dev 
 ## Features
 1. ⚡Plug & Play integration.
 2. 🚩Supports Desktop (no VR required) & Virtual Reality mode (HTC VIVE or Oculus controller).
-3. ☀️Works as build and in editor.
+3. 🍏Works as build and in editor.
 4. 👓Comes with six standard questionnaire types.
 5. 📙NASA TLX, Simulation Sickness Questionnaire, IPQ and SUS Presence Questionnaire as well as System Usability Scale (SUS) already included.
 6. 📁Auto-export as .csv or .txt file.
-7. 🍏Fully compatible with other frameworks.
+7. 🌌Fully compatible with other frameworks.
 8. 🍒Customizable tactile and sound feedback.
 
 ## Downloads
@@ -70,7 +70,7 @@ Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wik
 3) Large/Small Vive laser dot -> dis-/enable rectile autoscale in VivePointers Right and Left
 
 ## Issues
-If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us 📫 under martin.feick@dfki.de.
+If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us under martin.feick@dfki.de 📫.
 
 ## Dependencies 
 Simple Json Parser: https://github.com/Bunny83/SimpleJSON
