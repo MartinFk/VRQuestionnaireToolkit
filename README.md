@@ -26,7 +26,7 @@ series = {UIST '20 Adjunct}
 }
 ```
 
-We greatly appreciate any contributions and pull-requests (please submit to dev branch).
+We greatly appreciate any contributions and pull-requests (please commit to dev branch).
 
 
 ## Features
