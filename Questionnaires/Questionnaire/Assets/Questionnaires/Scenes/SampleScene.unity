@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -645,6 +645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: JsonInputPath_6
       value: Assets/Questionnaires/Data/Questions/System Usability Scale Questionnaire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259645, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: JsonInputPath_7
+      value: Assets/Questionnaires/Data/Questions/Virtual Embodiment Questionnaire
       objectReference: {fileID: 0}
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}

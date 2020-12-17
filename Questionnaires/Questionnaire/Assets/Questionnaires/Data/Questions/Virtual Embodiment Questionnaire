@@ -1,0 +1,209 @@
+{
+   "qTitle":"Virtual Embodiment Questionnaire",
+   "qInstructions":"Instructions: Please read each statement and answer on a 1 to 7 scale indicating how much each statement applied to you during the experiment. There are no right or wrong answers. 
+   Please answer spontaneously and intuitively. Scale example: 1–strongly disagree, 4–neither agree nor disagree, 7–strongly agree.",
+   "qId":"VEQ",
+   "questions":[
+      {
+         "pId":"page1",
+         "qType":"radio",
+         "qInstructions":"Please answer spontaneously and intuitively",
+         "qData":[
+            {
+               "qId":"q1",
+               "qText":"It felt like the virtual body was my body.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            },
+            {
+               "qId":"q2",
+               "qText":"It felt like the virtual body parts were my body parts.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            },
+            {
+               "qId":"q3",
+               "qText":"The virtual body felt like a human body.",
+               "qMandatory":"true",
+               "qOptions":[
+				  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page2",
+         "qType":"radio",
+         "qInstructions":"Please answer spontaneously and intuitively.",
+         "qMandatory":"true",
+         "qData":[
+            {
+               "qId":"q4",
+               "qText":"I had a stronger sense of...",
+               "qMandatory":"true",
+               "qOptions":[
+				  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            },
+            {
+               "qId":"q5",
+               "qText":"The movements of the virtual body felt like they were my movements.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            },
+            {
+               "qId":"q6",
+               "qText":"I felt like I was controlling the movements of the virtual body.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page2",
+         "qType":"radio",
+         "qInstructions":"Please answer spontaneously and intuitively.",
+         "qMandatory":"true",
+         "qData":[
+            {
+               "qId":"q7",
+               "qText":"I felt like I was causing the movements of the virtual body.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            },
+            {
+               "qId":"q8",
+               "qText":"The movements of the virtual body were in sync with my own movements.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            },
+            {
+               "qId":"q9",
+               "qText":"I felt like the form or appearance of my own body had changed.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page2",
+         "qType":"radio",
+         "qInstructions":"Please answer spontaneously and intuitively.",
+         "qMandatory":"true",
+         "qData":[
+            {
+               "qId":"q10",
+               "qText":"I felt like the weight of my own body had changed.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            },
+            {
+               "qId":"q11",
+               "qText":"I felt like the size (height) of my own body had changed.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            },
+            {
+               "qId":"q12",
+               "qText":"I felt like the width of my own body had changed.",
+               "qMandatory":"true",
+               "qOptions":[
+				  "1 = strongly disagree",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7 = strongly agree"
+               ]
+            }
+         ]
+      }
+   ],
+   "qMessage":"You have completed the questionnaire",
+   "qAcknowledgments":"Thank you very much for taking part in the experiment! We appreciate your time!"
+}
