@@ -72,6 +72,7 @@ namespace VRQuestionnaireToolkit
             }
             if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
+                _audioSource.volume = _studySetup.soundVolume;
                 _audioSource.PlayOneShot(_hoverSoundClip);
             }
                 
@@ -85,6 +86,7 @@ namespace VRQuestionnaireToolkit
             }
             if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
+                _audioSource.volume = _studySetup.soundVolume;
                 _audioSource.PlayOneShot(_selectSoundClip);
             }
         }

@@ -24,6 +24,8 @@ namespace VRQuestionnaireToolkit
         public bool ControllerTactileFeedbackOnOff = true;
         [Tooltip("Switch on/off sound feedback.")]
         public bool SoundOnOff = true;
+        [Range(0.0f, 1.0f)]
+        public float soundVolume = 1.0f;
         [Tooltip("When checked, use + and - keys to resize the questionnaire panel.\nPress 0 to reset to default.")]
         public bool ConfigurationMode = true;
 
