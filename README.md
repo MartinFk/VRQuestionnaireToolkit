@@ -81,4 +81,5 @@ Simple Json Parser: https://github.com/Bunny83/SimpleJSON
 3.	Robert S. Kennedy, Norman E. Lane, Kevin S. Berbaum, and Michael G. Lilienthal. 1993. Simulator Sickness Questionnaire: An Enhanced Method for Quantifying Simulator Sickness. The International Journal of Aviation Psychology 3, 3: 203–220. https://doi.org/10.1207/s15327108ijap0303_3
 4.	Holger Regenbrecht and Thomas Schubert. 2002. Real and Illusory Interactions Enhance Presence in Virtual Environments. Presence: Teleoperators and Virtual Environments https://doi.org/10.1162/105474602760204318
 5.	Martin Usoh, Ernest Catena, Sima Arman, and Mel Slater. 2000. Using Presence Questionnaires in Reality. Presence: Teleoperators and Virtual Environments
+6.  Daniel Roth and Marc Erich Latoschik. "Construction of the Virtual Embodiment Questionnaire (VEQ)." IEEE Annals of the History of Computing 26.12 (2020): 3546-3556.
 
