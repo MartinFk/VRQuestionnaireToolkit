@@ -64,21 +64,10 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 ## Documentation
 Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki 📘</a>  for full documentation and more information.
 
-## Known Issues
-1) Do not use your selected delimiter (e.g. ";") in your question
-2) When VR headset is connected, Desktop mode does not work (restart Unity3D required)
-3) Large/Small Vive laser dot -> dis-/enable rectile autoscale in VivePointers Right and Left
+## Overview
+<p align="center">
+	<img src="http://martinfeick.com/wp-content/uploads/2020/12/Overview.png">
+</p>
 
 ## Issues
 If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us under martin.feick@dfki.de 📫.
-
-## Dependencies 
-Simple Json Parser: https://github.com/Bunny83/SimpleJSON
-
-## Questionnaire References
-1.	John Brooke. 1986. System usability scale (SUS): a quick-and-dirty method of system evaluation user information. Reading, UK: Digital Equipment Co Ltd 43
-2.	Sandra G. Hart and Lowell E. Staveland. 1988. Development of NASA-TLX (Task Load Index): Results of Empirical and Theoretical Research. In Advances in Psychology, Peter A. Hancock and Najmedin Meshkati (eds.). North-Holland, 139–183. https://doi.org/10.1016/S0166-4115(08)62386-9
-3.	Robert S. Kennedy, Norman E. Lane, Kevin S. Berbaum, and Michael G. Lilienthal. 1993. Simulator Sickness Questionnaire: An Enhanced Method for Quantifying Simulator Sickness. The International Journal of Aviation Psychology 3, 3: 203–220. https://doi.org/10.1207/s15327108ijap0303_3
-4.	Holger Regenbrecht and Thomas Schubert. 2002. Real and Illusory Interactions Enhance Presence in Virtual Environments. Presence: Teleoperators and Virtual Environments https://doi.org/10.1162/105474602760204318
-5.	Martin Usoh, Ernest Catena, Sima Arman, and Mel Slater. 2000. Using Presence Questionnaires in Reality. Presence: Teleoperators and Virtual Environments
-
