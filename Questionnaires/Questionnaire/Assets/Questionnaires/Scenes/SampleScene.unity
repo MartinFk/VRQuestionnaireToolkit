@@ -469,12 +469,12 @@ PrefabInstance:
     - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: ControllerTactileFeedbackOnOff
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: SoundOnOff
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -650,6 +650,16 @@ PrefabInstance:
         type: 3}
       propertyPath: JsonInputPath_7
       value: Assets/Questionnaires/Data/Questions/Virtual Embodiment Questionnaire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259645, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: JsonInputPath_4
+      value: Assets/Questionnaires/Data/Questions/Simulation Sickness Questionnaire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259645, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: JsonInputPath_1
+      value: Assets/Questionnaires/Data/Questions/questionnaire_example
       objectReference: {fileID: 0}
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}

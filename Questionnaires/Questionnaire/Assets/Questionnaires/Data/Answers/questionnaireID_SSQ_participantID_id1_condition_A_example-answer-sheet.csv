@@ -1,0 +1,18 @@
+QuestionType;Question;QuestionID;Answer
+radio;General discomfort;q1;0
+radio;Fatique;q2;0
+radio;Headache;q3;0
+radio;Eye strain;q4;0
+radio;Difficulty focusing;q5;0
+radio;Salivation increasing;q6;0
+radio;Sweating;q7;1
+radio;Nausea;q8;1
+radio;Difficulty concentrating;q9;1
+radio;Fullness of the Head;q10;2
+radio;Blurred vision;q11;2
+radio;Dizziness with eyes open;q12;2
+radio;Dizziness with eyes closed;q13;3
+radio;Vertigo (experienced as loss of orientation with respect to vertical upright);q14;3
+radio;Stomach awareness (feeling of discomfort which is just short of nausea);q15;3
+radio;Burping;q16;2
+

@@ -1,28 +1,26 @@
 QuestionType;Question;QuestionID;Answer
-radio;UIST is an amazing conference;q1;4
-radio;VR is a beautiful research tool;q2;5
-radio;Happiness is the key to success;q3;
-radio;Debugging is awesome;q4;1
+radio;UIST is an amazing conference;q1;1
+radio;VR is a beautiful research tool;q2;1
+radio;Happiness is the key to success;q3;1
+radio;Debugging is awesome;q4;4
 radio;I like fixing bugs;q5;4
-radio;I would use the VRQuestionnaireToolkit;q6;7
-radioGrid;Hololens_The system was easy to use;q7;1
-radioGrid;Oculus Rift_The system was easy to use;q7;4
-radioGrid;Vive_The system was easy to use;q7;2
-radioGrid;Magic Leap_The system was easy to use;q7;5
-radioGrid;Hololens_The system was easy to use;q8;6
+radio;I would use the VRQuestionnaireToolkit;q6;4
+radioGrid;Hololens_The system was easy to use;q7;5
+radioGrid;Oculus Rift_The system was easy to use;q7;5
+radioGrid;Vive_The system was easy to use;q7;1
+radioGrid;Magic Leap_The system was easy to use;q7;1
+radioGrid;Hololens_The system was easy to use;q8;2
 radioGrid;Oculus Rift_The system was easy to use;q8;3
-radioGrid;Vive_The system was easy to use;q8;5
-radioGrid;Magic Leap_The system was easy to use;q8;2
-checkbox; If you don’t use VR frequently, what is keeping you from adopting this?;q9;1
-checkbox; If you don’t use VR frequently, what is keeping you from adopting this?;q9;3
-checkbox; If you don’t use VR frequently, what is keeping you from adopting this?;q9;6
-linearSlider;Temporal Demand:			How hurried or rushed was the pace of the task?;s1;2
-linearSlider;Physical Demand:				How physically demanding was the task?;s2;0
-linearSlider;Mental Demand:				How mentally demanding was the task?;s3;17
-linearGrid;Mental Demand:				How mentally demanding was the task?;s4;4
-linearGrid;Physical Demand:				How physically demanding was the task?;s5;1
-linearGrid;Temporal Demand:		    How hurried or rushed was the pace of the task?;s6;14
-dropdown;Demanding;d1;1
+radioGrid;Vive_The system was easy to use;q8;4
+radioGrid;Magic Leap_The system was easy to use;q8;5
+checkbox; If you don’t use VR frequently, what is keeping you from adopting this?;q9;2
+linearSlider;Temporal Demand:			How hurried or rushed was the pace of the task?;s1;0
+linearSlider;Physical Demand:				How physically demanding was the task?;s2;6
+linearSlider;Mental Demand:				How mentally demanding was the task?;s3;10
+linearGrid;Mental Demand:				How mentally demanding was the task?;s4;7
+linearGrid;Physical Demand:				How physically demanding was the task?;s5;6
+linearGrid;Temporal Demand:		    How hurried or rushed was the pace of the task?;s6;16
+dropdown;Demanding;d1;0
 dropdown;Mental;d2;0
-dropdown;Physical;d3;2
+dropdown;Physical;d3;0
 

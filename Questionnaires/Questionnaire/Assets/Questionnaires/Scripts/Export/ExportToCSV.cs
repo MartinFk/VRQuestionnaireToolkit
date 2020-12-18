@@ -128,7 +128,14 @@ namespace VRQuestionnaireToolkit
                         {
                             if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][j].GetComponentInChildren<Toggle>().isOn)
                             {
-                                csvTemp[3] = "" + (j + 1);
+                                if (_questionnaireID != "SSQ")
+                                {
+                                    csvTemp[3] = "" + (j + 1);
+                                }
+                                else
+                                {
+                                    csvTemp[3] = "" + j;
+                                }
                             }
                         }
                         _csvRows.Add(csvTemp);
