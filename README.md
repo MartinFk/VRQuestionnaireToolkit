@@ -64,5 +64,10 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 ## Documentation
 Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wiki 📘</a>  for full documentation and more information.
 
+## Overview
+<p align="center">
+	<img src="http://martinfeick.com/wp-content/uploads/2020/12/Hierarchy_Overview.png">
+</p>
+
 ## Issues
 If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us under martin.feick@dfki.de 📫.
