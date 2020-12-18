@@ -24,6 +24,8 @@ namespace VRQuestionnaireToolkit
         public bool ControllerTactileFeedbackOnOff = true;
         [Tooltip("Switch on/off sound feedback.")]
         public bool SoundOnOff = true;
+        [Tooltip("When checked, use + and - keys to resize the questionnaire panel.\nPress 0 to reset to default.")]
+        public bool ConfigurationMode = true;
 
         [Header("Customize feedback parameters on hovering:")]
         [Range(0, 1)]
@@ -46,18 +48,19 @@ namespace VRQuestionnaireToolkit
         public AudioClip soundClipSelecting;
 
 
-        [Space(20)]
-        [Tooltip("Remember the position, rotation and scale of the questionnaire panel after adjusting it." +
-            "\n\nIf true => use the saved transform values from the last time;" +
-            "\nIf false => use default transform values.")]
-        public bool rememberTransformValues;
+        //[Space(20)]
+        //[Tooltip("Remember the position, rotation and scale of the questionnaire panel after adjusting it." +
+        //    "\n\nIf true => use the saved transform values from the last time;" +
+        //    "\nIf false => use default transform values.")]
+        //public bool rememberTransformValues;
+
         private string _path; // file path to write the remembered transform values to
 
         void Start()
         {
             _path = Application.dataPath + "/Resources/saved_transform_values";
 
-            if (rememberTransformValues & File.Exists(_path))
+            if (ConfigurationMode & File.Exists(_path))
                 SetTransformToSavedValues();
             else
                 SetTransformToDefault();
@@ -65,12 +68,12 @@ namespace VRQuestionnaireToolkit
 
         void Update()
         {
-            AdjustTransform();
+            if (ConfigurationMode) AdjustTransform();
         }
 
         void OnApplicationQuit()
         {
-            if (rememberTransformValues)
+            if (ConfigurationMode)
                 SaveCurrentValues();
         }
 
