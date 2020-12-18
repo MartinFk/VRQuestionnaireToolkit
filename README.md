@@ -66,7 +66,7 @@ Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wik
 
 ## Overview
 <p align="center">
-	<img src="http://martinfeick.com/wp-content/uploads/2020/12/Hierarchy_Overview.png">
+	<img src="http://martinfeick.com/wp-content/uploads/2020/12/Overview.png">
 </p>
 
 ## Issues
