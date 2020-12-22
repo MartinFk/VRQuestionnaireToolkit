@@ -43,8 +43,17 @@ namespace VRQuestionnaireToolkit
 
         public void PulseBothHands(float duration, float frequency, float amplitude)
         {
-            hapticAction.Execute(0, duration, frequency, amplitude, SteamVR_Input_Sources.LeftHand);
-            hapticAction.Execute(0, duration, frequency, amplitude, SteamVR_Input_Sources.RightHand);
+            try
+            {
+                hapticAction.Execute(0, duration, frequency, amplitude, SteamVR_Input_Sources.LeftHand);
+                hapticAction.Execute(0, duration, frequency, amplitude, SteamVR_Input_Sources.RightHand);
+            }
+            catch  // If a NullReferenceException is catched, turn off the tactile feedback.
+            {
+                _studySetup.ControllerTactileFeedbackOnOff = false;
+                Debug.LogWarning("Please make sure your Vive controllers are correctly set up. \nTactile feedback is now switched off.");
+            }
+            
         }
 
         // To add listeners to the hovering event over the current element.  
@@ -72,6 +81,7 @@ namespace VRQuestionnaireToolkit
             }
             if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
+                _audioSource.volume = _studySetup.soundVolume;
                 _audioSource.PlayOneShot(_hoverSoundClip);
             }
                 
@@ -85,6 +95,7 @@ namespace VRQuestionnaireToolkit
             }
             if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
+                _audioSource.volume = _studySetup.soundVolume;
                 _audioSource.PlayOneShot(_selectSoundClip);
             }
         }
