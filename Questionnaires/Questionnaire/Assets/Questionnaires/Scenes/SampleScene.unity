@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -161,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 450334, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 450334, guid: 12ee41758a687f54e98120e486ccd16e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -210,8 +211,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -331,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ViveCameraRig
       objectReference: {fileID: 0}
+    - target: {fileID: 175660, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -361,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 463184, guid: cb3370c18187bb444b240cfb08dcc02f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -445,6 +451,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1016164502312608958, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: ParticipantId
@@ -455,6 +466,71 @@ PrefabInstance:
       propertyPath: Condition
       value: A
       objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: ControllerTactileFeedbackOnOff
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: SoundOnOff
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: hoverSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b660b21fad7af34e806c3f3c4eb8868, type: 3}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: rememberTransformWhenQuit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: rememberTransformValues
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: vibratingFrequencySelecting
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: vibratingAmplitudeSelecting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: soundClipHovering
+      value: 
+      objectReference: {fileID: 8300000, guid: d7d08c266925c5446947a004fde53aa0, type: 3}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: soundClipSelecting
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b660b21fad7af34e806c3f3c4eb8868, type: 3}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: ConfigurationMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: soundClipForHovering
+      value: 
+      objectReference: {fileID: 8300000, guid: d7d08c266925c5446947a004fde53aa0, type: 3}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: soundClipForSelecting
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b660b21fad7af34e806c3f3c4eb8868, type: 3}
     - target: {fileID: 8697000387260259617, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_Name
@@ -473,22 +549,22 @@ PrefabInstance:
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -498,7 +574,7 @@ PrefabInstance:
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -518,22 +594,22 @@ PrefabInstance:
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 600
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -565,6 +641,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259619, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259645, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: JsonInputPath_5
@@ -575,10 +666,35 @@ PrefabInstance:
       propertyPath: JsonInputPath_6
       value: Assets/Questionnaires/Data/Questions/System Usability Scale Questionnaire
       objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259645, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: JsonInputPath_7
+      value: Assets/Questionnaires/Data/Questions/Virtual Embodiment Questionnaire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259645, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: JsonInputPath_4
+      value: Assets/Questionnaires/Data/Questions/Simulation Sickness Questionnaire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259645, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: JsonInputPath_1
+      value: Assets/Questionnaires/Data/Questions/questionnaire_example
+      objectReference: {fileID: 0}
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: Delimiter
       value: ;
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: FileName
+      value: example-answer-sheet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: StorePath
+      value: /Questionnaires/Data/Answers/
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93494b0f3d397d74ba1458871f004384, type: 3}

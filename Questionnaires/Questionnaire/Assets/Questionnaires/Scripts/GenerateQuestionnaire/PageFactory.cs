@@ -68,6 +68,11 @@ namespace VRQuestionnaireToolkit
                 pageRec.SetParent(PageParent);
                 SetRec(pageRec);
 
+                //ensuring the anchor of q_panel is centered
+                GameObject q_panel = GameObject.Find("Q_Panel");
+                RectTransform qPanelRect = q_panel.GetComponent<RectTransform>();
+                CenterRec(qPanelRect);
+
                 //display instruction on page
                 GameObject q_header = GameObject.Find("Q_Header");
                 TextMeshProUGUI descriptionText = q_header.GetComponentInChildren<TextMeshProUGUI>();
@@ -192,7 +197,7 @@ namespace VRQuestionnaireToolkit
                             textArray[0].transform.localPosition = new Vector3(0, 120, textArray[0].transform.localPosition.z);
 
                             SetRec(radioHorizontalRec);
-                            QuestionList.Add(temp.GetComponent<RadioGrid>().CreateRadioGridQuestion(qId, qType, qInstructions, _qData[i][0],
+                            QuestionList.Add(temp.GetComponent<RadioGrid>().CreateRadioGridQuestion(qId, qType, qInstructions, _qData[0][0],
                                 _qData[0][1], _qData[0][2].AsBool, qOptions, qConditions[i][1], i, radioHorizontalRec));
                         }
                     }
@@ -303,6 +308,16 @@ namespace VRQuestionnaireToolkit
         }
 
 
+        //centering the anchor and the position of the RectTransform
+        private void CenterRec(RectTransform rec)
+        {
+            rec.anchorMax = new Vector2(0.5f, 0.5f);
+            rec.anchorMin = new Vector2(0.5f, 0.5f);
+            rec.pivot = new Vector2(0.5f, 0.5f);
+            rec.localPosition = new Vector3(0, 0, 0);
+        }
+
+
         #endregion
 
         #region FirstAndLastPage
@@ -329,6 +344,11 @@ namespace VRQuestionnaireToolkit
             RectTransform pageRec = _newPage.GetComponent<RectTransform>();
             pageRec.SetParent(PageParent);
             SetRec(pageRec);
+
+            //ensuring the anchor of q_panel is centered
+            GameObject q_panel = GameObject.Find("Q_Panel");
+            RectTransform qPanelRect = q_panel.GetComponent<RectTransform>();
+            CenterRec(qPanelRect);
 
             //display instruction on page
             GameObject q_header = GameObject.Find("Q_Header");
