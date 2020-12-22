@@ -40,9 +40,9 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 8. 🍒Customizable tactile and sound feedback.
 
 ## Downloads
-- 🍧Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/integration.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
-- 🍪Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/07/standalone.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
-- 🔖JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/07/jsonSamples.zip" target="_blank" rel="noopener noreferrer">json samples</a><br>
+- 🍧Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/12/integrationV1.1.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
+- 🍪Standalone version (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2020/12/standaloneV1.1.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
+- 🔖JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/12/questionsV1.1.zip" target="_blank" rel="noopener noreferrer">json samples</a><br>
 - 🎓Paper: <a href="https://dl.acm.org/doi/abs/10.1145/3379350.3416188" target="_blank" rel="noopener noreferrer"> UIST 20 - Extended Abstracts</a><br>
 - 📋BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib" target="_blank" rel="noopener noreferrer"> VRQuestionnaireToolkit.bib</a><br>
 - 🔓Pre-print: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRQuestionnaireToolkit.pdf" target="_blank" rel="noopener noreferrer">Pre-Print</a><br>
