@@ -24,30 +24,32 @@ namespace VRQuestionnaireToolkit
         public bool ControllerTactileFeedbackOnOff = true;
         [Tooltip("Switch on/off sound feedback.")]
         public bool SoundOnOff = true;
-        [Range(0.0f, 1.0f)]
-        public float soundVolume = 1.0f;
         [Tooltip("When checked, use + and - keys to resize the questionnaire panel.\nPress 0 to reset to default.")]
         public bool ConfigurationMode = true;
 
         [Header("Customize feedback parameters on hovering:")]
         [Range(0, 1)]
-        public float vibratingDurationHovering = 0.05f;
+        public float vibratingDurationForHovering = 0.05f;
         [Range(0, 200)]
-        public float vibratingFrequencyHovering = 1.0f;
+        public float vibratingFrequencyForHovering = 1.0f;
         [Range(0, 100)]
-        public float vibratingAmplitudeHovering = 5.0f;
+        public float vibratingAmplitudeForHovering = 5.0f;
         [Tooltip("Choose the audio file to play upon hovering over a button.")]
-        public AudioClip soundClipHovering;
+        public AudioClip soundClipForHovering;
+        [Range(0.0f, 1.0f)]
+        public float hoveringVolume = 1.0f;
 
         [Header("Customize feedback parameters on selecting:")]
         [Range(0, 1)]
-        public float vibratingDurationSelecting = 0.05f;
+        public float vibratingDurationForSelecting = 0.05f;
         [Range(0, 200)]
-        public float vibratingFrequencySelecting = 200.0f;
+        public float vibratingFrequencyForSelecting = 200.0f;
         [Range(0, 100)]
-        public float vibratingAmplitudeSelecting = 1.0f;
+        public float vibratingAmplitudeForSelecting = 1.0f;
         [Tooltip("Choose the audio file to play upon selecting on a button.")]
-        public AudioClip soundClipSelecting;
+        public AudioClip soundClipForSelecting;
+        [Range(0.0f, 1.0f)]
+        public float selectingVolume = 1.0f;
 
 
         //[Space(20)]

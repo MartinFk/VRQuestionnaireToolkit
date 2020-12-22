@@ -30,8 +30,8 @@ namespace VRQuestionnaireToolkit
             GameObject _vrToolkit = GameObject.FindGameObjectWithTag("VRQuestionnaireToolkit");
             _studySetup = _vrToolkit.GetComponent<StudySetup>();
             _audioSource = _studySetup.GetComponent<AudioSource>();
-            _hoverSoundClip = _studySetup.soundClipHovering;
-            _selectSoundClip = _studySetup.soundClipSelecting;
+            _hoverSoundClip = _studySetup.soundClipForHovering;
+            _selectSoundClip = _studySetup.soundClipForSelecting;
             AddTriggerListener();
         }
 
@@ -77,11 +77,11 @@ namespace VRQuestionnaireToolkit
         {
             if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
             {
-                PulseBothHands(_studySetup.vibratingDurationHovering, _studySetup.vibratingFrequencyHovering, _studySetup.vibratingAmplitudeHovering);
+                PulseBothHands(_studySetup.vibratingDurationForHovering, _studySetup.vibratingFrequencyForHovering, _studySetup.vibratingAmplitudeForHovering);
             }
             if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
-                _audioSource.volume = _studySetup.soundVolume;
+                _audioSource.volume = _studySetup.hoveringVolume;
                 _audioSource.PlayOneShot(_hoverSoundClip);
             }
                 
@@ -91,11 +91,11 @@ namespace VRQuestionnaireToolkit
         {
             if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
             {
-                PulseBothHands(_studySetup.vibratingDurationSelecting, _studySetup.vibratingFrequencySelecting, _studySetup.vibratingAmplitudeSelecting);
+                PulseBothHands(_studySetup.vibratingDurationForSelecting, _studySetup.vibratingFrequencyForSelecting, _studySetup.vibratingAmplitudeForSelecting);
             }
             if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
-                _audioSource.volume = _studySetup.soundVolume;
+                _audioSource.volume = _studySetup.selectingVolume;
                 _audioSource.PlayOneShot(_selectSoundClip);
             }
         }
