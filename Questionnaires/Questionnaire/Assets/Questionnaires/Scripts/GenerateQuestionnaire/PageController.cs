@@ -19,6 +19,7 @@ namespace VRQuestionnaireToolkit
         private GameObject _vrQuestionnaireFactory;
         private PageFactory _pageFactory;
         private GameObject _export;
+        public List<GameObject> unansweredMandatoryQuestions;
 
         void Start()
         {
@@ -26,6 +27,7 @@ namespace VRQuestionnaireToolkit
             _vrQuestionnaireFactory = GameObject.FindGameObjectWithTag("QuestionnaireFactory");
             _export = GameObject.FindGameObjectWithTag("ExportToCSV");
             _pageFactory = _vrQuestionnaireFactory.GetComponent<PageFactory>();
+            unansweredMandatoryQuestions = new List<GameObject>();
         }
 
         public bool CheckMandatoryQuestionsAnswered()
@@ -42,6 +44,7 @@ namespace VRQuestionnaireToolkit
                     {
                         countMandatory++;
 
+                        bool isAnswered = false;
                         for (int j = 0;
                             j < _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Radio>()
                                 .RadioList.Count;
@@ -49,10 +52,14 @@ namespace VRQuestionnaireToolkit
                         {
                             if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][j].GetComponentInChildren<Toggle>().isOn)
                             {
+                                isAnswered = true;
                                 answeredMandatory++;
                             }
                         }
-
+                        if (!isAnswered) // If this question is not answered yet.
+                        {
+                            unansweredMandatoryQuestions.Add(_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].transform.parent.Find("QuestionText").gameObject);
+                        }
                     }
                 }
                 else if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<RadioGrid>() != null)
@@ -62,6 +69,7 @@ namespace VRQuestionnaireToolkit
                     {
                         countMandatory++;
 
+                        bool isAnswered = false;
                         for (int j = 0;
                             j < _pageFactory.GetComponent<PageFactory>().QuestionList[i][0]
                                 .GetComponentInParent<RadioGrid>()
@@ -71,8 +79,13 @@ namespace VRQuestionnaireToolkit
                             if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][j].GetComponentInChildren<Toggle>()
                                 .isOn)
                             {
+                                isAnswered = true;
                                 answeredMandatory++;
                             }
+                        }
+                        if (!isAnswered) // If this question is not answered yet.
+                        {
+                            unansweredMandatoryQuestions.Add(_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].transform.parent.Find("QuestionText").gameObject);
                         }
                     }
                 }
@@ -85,6 +98,7 @@ namespace VRQuestionnaireToolkit
                         {
                             countMandatory++;
 
+                            bool isAnswered = false;
                             for (int j = 0;
                                 j < _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>()
                                     .CheckboxList.Count;
@@ -92,10 +106,14 @@ namespace VRQuestionnaireToolkit
                             {
                                 if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][j].GetComponentInChildren<Toggle>().isOn)
                                 {
+                                    isAnswered = true;
                                     answeredMandatory++;
                                 }
                             }
-
+                            if (!isAnswered) // If this question is not answered yet.
+                            {
+                                unansweredMandatoryQuestions.Add(_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].transform.parent.Find("QuestionText").gameObject);
+                            }
                         }
                     }
                 }
@@ -106,6 +124,7 @@ namespace VRQuestionnaireToolkit
                     {
                         countMandatory++;
 
+                        bool isAnswered = false;
                         for (int j = 0;
                             j < _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<LinearGrid>()
                                 .LinearGridList.Count;
@@ -113,10 +132,14 @@ namespace VRQuestionnaireToolkit
                         {
                             if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][j].GetComponentInChildren<Toggle>().isOn)
                             {
+                                isAnswered = true;
                                 answeredMandatory++;
                             }
                         }
-
+                        if (!isAnswered) // If this question is not answered yet.
+                        {
+                            unansweredMandatoryQuestions.Add(_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].transform.parent.Find("QuestionText").gameObject);
+                        }
                     }
                 }
             }
@@ -159,6 +182,11 @@ namespace VRQuestionnaireToolkit
             }
             else
             {
+                foreach (GameObject obj in unansweredMandatoryQuestions) // Make each unanswered question blink in red.
+                {
+                    StartCoroutine(ChangeTextColor(obj));
+                }
+                unansweredMandatoryQuestions.Clear();
                 //   _pageFactory.GetComponentInChildren<TextMeshProUGUI>().gameObject.SetActive(true);
             }
         }
@@ -173,6 +201,19 @@ namespace VRQuestionnaireToolkit
             _pageFactory.PageList[_pageFactory.CurrentPage].SetActive(false);
             --_pageFactory.CurrentPage;
             _pageFactory.PageList[_pageFactory.CurrentPage].SetActive(true);
+        }
+
+        IEnumerator ChangeTextColor(GameObject textObj)
+        {
+            float increment = 0.05f;
+            float timer = 0;
+            while (timer <= 1)
+            {
+                timer += increment;
+                textObj.GetComponent<TextMeshProUGUI>().color = 
+                    Color.Lerp(Color.black, Color.red, Mathf.Abs(Mathf.Sin(3*Mathf.PI*timer))); // blink 3 times from black to red.
+                yield return new WaitForSeconds(increment);
+            }
         }
     }
 }

@@ -26,6 +26,8 @@ namespace VRQuestionnaireToolkit
         public bool SoundOnOff = true;
         [Tooltip("When checked, use + and - keys to resize the questionnaire panel.\nPress 0 to reset to default.")]
         public bool ConfigurationMode = true;
+        [Tooltip("Also write the result of the current participant to a summary table which contains the results of ALL participants.")]
+        public bool AlsoConsolidateResults = true;
 
         [Header("Customize feedback parameters on hovering:")]
         [Range(0, 1)]
@@ -51,12 +53,6 @@ namespace VRQuestionnaireToolkit
         [Range(0.0f, 1.0f)]
         public float selectingVolume = 1.0f;
 
-
-        //[Space(20)]
-        //[Tooltip("Remember the position, rotation and scale of the questionnaire panel after adjusting it." +
-        //    "\n\nIf true => use the saved transform values from the last time;" +
-        //    "\nIf false => use default transform values.")]
-        //public bool rememberTransformValues;
 
         private string _path; // file path to write the remembered transform values to
 
@@ -147,7 +143,7 @@ namespace VRQuestionnaireToolkit
 
         void SetTransformToDefault()
         {
-            this.transform.localPosition = new Vector3(0.0f, 1.5f, 6.0f);
+            this.transform.localPosition = new Vector3(0.0f, 1.0f, 6.0f);
             this.transform.localRotation = Quaternion.identity;
             this.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         }
