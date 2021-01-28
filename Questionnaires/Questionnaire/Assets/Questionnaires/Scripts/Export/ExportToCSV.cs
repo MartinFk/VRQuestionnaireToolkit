@@ -259,7 +259,7 @@ namespace VRQuestionnaireToolkit
             //-----Processing responses into the specified data format-----//
 
             _path = _folderPath + "questionnaireID_" + _questionnaireID + "_participantID_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition + "_" + FileName + "." + _fileType;
-            _path_all = _folderPath + "questionnaireID_" + _questionnaireID + "_ALL_PARTICIPANTS_" + "_condition_" + _studySetup.Condition + "_" + FileName + "." + _fileType;
+            _path_all = _folderPath + "questionnaireID_" + _questionnaireID + "_ALL_" + FileName + "." + _fileType;
 
             string[][] output = new string[_csvRows.Count][];
 
@@ -280,12 +280,14 @@ namespace VRQuestionnaireToolkit
 
             if (_studySetup.AlsoConsolidateResults)
             {
+                string header = "Answer_Participant_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition;
+
                 try
                 {
                     if (!File.Exists(_path_all))
                     {
                         StreamWriter sw = new StreamWriter(_path_all);
-                        sw.WriteLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + _studySetup.ParticipantId);
+                        sw.WriteLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + header);
                         for (int row = 1; row < length; row++)
                         {
                             sw.WriteLine(string.Join(Delimiter, output[row]));
@@ -297,7 +299,7 @@ namespace VRQuestionnaireToolkit
                     {
                         StringBuilder sb2 = new StringBuilder();
                         StreamReader sr = new StreamReader(_path_all);
-                        sb2.AppendLine(sr.ReadLine() + Delimiter + _studySetup.ParticipantId);
+                        sb2.AppendLine(sr.ReadLine() + Delimiter + header);
                         for (int row = 1; row < length; row++)
                         {
                             sb2.AppendLine(sr.ReadLine() + Delimiter + output[row][3]); // repeat the old lines and append the new answer at the end
