@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.questionnaire.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\zich01-admin\\Documents\\GitHub\\VRQuestionnaireToolkit\\Questionnaires\\Questionnaire\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "E:\\CharlieThesis\\UnityProjects\\VRQuestionnaireToolkit\\Questionnaires\\Questionnaire\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Questionnaire [Testing]"

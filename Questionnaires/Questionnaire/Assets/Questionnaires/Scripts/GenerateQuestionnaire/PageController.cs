@@ -85,7 +85,7 @@ namespace VRQuestionnaireToolkit
                         }
                         if (!isAnswered) // If this question is not answered yet.
                         {
-                            unansweredMandatoryQuestions.Add(_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].transform.parent.Find("QuestionText").gameObject);
+                            unansweredMandatoryQuestions.Add(_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].transform.parent.Find("ConditionName").gameObject);
                         }
                     }
                 }
