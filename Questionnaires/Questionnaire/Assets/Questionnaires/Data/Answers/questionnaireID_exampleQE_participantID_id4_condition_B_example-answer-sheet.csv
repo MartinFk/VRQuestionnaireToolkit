@@ -14,11 +14,11 @@ radioGrid;Oculus Rift_The system was easy to use;q8;1
 radioGrid;Vive_The system was easy to use;q8;3
 radioGrid;Magic Leap_The system was easy to use;q8;2
 checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -It's too expensive;q9;1
-checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -The technology isn't that good yet ;q9;2
-checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -There is not enough content and/or games ;q9;3
-checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -I don't like wearing the headset ;q9;4
-checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -The experience isn't immersive enough;q9;5
-checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -The experience isn't better than traditional gaming;q9;6
+checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -The technology isn't that good yet ;q9;1
+checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -There is not enough content and/or games ;q9;1
+checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -I don't like wearing the headset ;q9;1
+checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -The experience isn't immersive enough;q9;1
+checkbox; If you don’t use VR frequently, what is keeping you from adopting this? -The experience isn't better than traditional gaming;q9;1
 linearSlider;Temporal Demand:			How hurried or rushed was the pace of the task?;s1;3
 linearSlider;Physical Demand:				How physically demanding was the task?;s2;10
 linearSlider;Mental Demand:				How mentally demanding was the task?;s3;12
