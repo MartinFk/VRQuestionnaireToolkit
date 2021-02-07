@@ -29,6 +29,7 @@ namespace VRQuestionnaireToolkit
         public bool UseGlobalPath;
 
         private string _path;
+        private string _path_all;
         private List<string[]> _csvRows;
         private GameObject _pageFactory;
         private GameObject _vrQuestionnaireToolkit;
@@ -67,9 +68,8 @@ namespace VRQuestionnaireToolkit
         public void Save()
         {
             _folderPath = UseGlobalPath ? StorePath : Application.dataPath + StorePath;
-
-            // Create a new folder if the specified folder does not exist.
-            try
+            
+            try // Create a new folder if the specified folder does not exist.
             {
                 if (!Directory.Exists(_folderPath))
                 {
@@ -95,13 +95,14 @@ namespace VRQuestionnaireToolkit
             _csvRows = new List<string[]>();
 
             // creating title rows
-            string[] csvTemp = new string[4];
+            string[] csvTitleRow = new string[4];
+            csvTitleRow[0] = "QuestionType";
+            csvTitleRow[1] = "Question";
+            csvTitleRow[2] = "QuestionID";
+            csvTitleRow[3] = "Answer";
+            _csvRows.Add(csvTitleRow);
 
-            csvTemp[0] = "QuestionType";
-            csvTemp[1] = "Question";
-            csvTemp[2] = "QuestionID";
-            csvTemp[3] = "Answer";
-            _csvRows.Add(csvTemp);
+            string[] csvTemp = new string[4];
 
             // enable all GameObjects (except the first and last page) in order to read the responses
             for (int i = 1; i < _pageFactory.GetComponent<PageFactory>().NumPages - 1; i++)
@@ -182,36 +183,20 @@ namespace VRQuestionnaireToolkit
                     else if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>() != null)
                     {
                         _questionnaireID = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QuestionnaireId;
-                        csvTemp[0] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QType;
-                        csvTemp[1] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QText;
-                        csvTemp[2] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QId;
-                        bool multiple = false;
 
                         for (int j = 0;
                             j < _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>()
                                 .CheckboxList.Count;
                             j++)
                         {
-                            if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][j].GetComponentInChildren<Toggle>().isOn)
-                            {
-                                if (multiple)
-                                {
-                                    _csvRows.Add(csvTemp);
-                                    csvTemp = new string[4];
-                                    csvTemp[0] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QType;
-                                    csvTemp[1] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QText;
-                                    csvTemp[2] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QId;
-                                    csvTemp[3] = "" + (j + 1);
-
-                                }
-                                else
-                                {
-                                    csvTemp[3] = "" + (j + 1);
-                                    multiple = true;
-                                }
-                            }
+                            csvTemp = new string[4];
+                            csvTemp[0] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QType;
+                            csvTemp[1] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QText + " -" +
+                                        _pageFactory.GetComponent<PageFactory>().QuestionList[i][j].GetComponentInParent<Checkbox>().QOptions[j]; // "xxxQuestionxxx? -xxxOptionxxx"
+                            csvTemp[2] = _pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Checkbox>().QId;
+                            csvTemp[3] = (_pageFactory.GetComponent<PageFactory>().QuestionList[i][j].GetComponentInChildren<Toggle>().isOn ? ("" + 1) : ""); // 1 if checked, blank if unchecked
+                            _csvRows.Add(csvTemp);
                         }
-                        _csvRows.Add(csvTemp);
                     }
                     else if (_pageFactory.GetComponent<PageFactory>().QuestionList[i][0].GetComponentInParent<Slider>() != null)
                     {
@@ -258,11 +243,14 @@ namespace VRQuestionnaireToolkit
             //-----Processing responses into the specified data format-----//
 
             _path = _folderPath + "questionnaireID_" + _questionnaireID + "_participantID_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition + "_" + FileName + "." + _fileType;
+            _path_all = _folderPath + "questionnaireID_" + _questionnaireID + "_ALL_" + FileName + "." + _fileType;
 
             string[][] output = new string[_csvRows.Count][];
 
             for (int i = 0; i < output.Length; i++)
+            {
                 output[i] = _csvRows[i];
+            }
 
             int length = output.GetLength(0);
 
@@ -271,10 +259,50 @@ namespace VRQuestionnaireToolkit
             for (int index = 0; index < length; index++)
                 sb.AppendLine(string.Join(Delimiter, output[index]));
 
-            print("answers stored in path: " + _path);
+            print("Answers stored in path: " + _path);
             StreamWriter outStream = System.IO.File.CreateText(_path);
             outStream.WriteLine(sb);
             outStream.Close();
+
+            if (_studySetup.AlsoConsolidateResults)
+            {
+                string header = "Answer_Participant_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition;
+
+                try
+                {
+                    if (!File.Exists(_path_all))
+                    {
+                        StreamWriter sw = new StreamWriter(_path_all);
+                        sw.WriteLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + header);
+                        for (int row = 1; row < length; row++)
+                        {
+                            sw.WriteLine(string.Join(Delimiter, output[row]));
+                        }
+                        sw.Close();
+                        print("Answers consolidated in path: " + _path_all);
+                    }
+                    else
+                    {
+                        StringBuilder sb2 = new StringBuilder();
+                        StreamReader sr = new StreamReader(_path_all);
+                        sb2.AppendLine(sr.ReadLine() + Delimiter + header);
+                        for (int row = 1; row < length; row++)
+                        {
+                            sb2.AppendLine(sr.ReadLine() + Delimiter + output[row][3]); // repeat the old lines and append the new answer at the end
+                        }
+                        sr.Close();
+
+                        StreamWriter sw = System.IO.File.CreateText(_path_all);
+                        sw.WriteLine(sb2);
+                        sw.Close();
+                        print("Answers consolidated in path: " + _path_all);
+                    }
+                }
+                catch (IOException ex)
+                {
+                    Debug.Log(ex.Message);
+                }
+            }
 
             QuestionnaireFinishedEvent.Invoke(); //notify 
         }
