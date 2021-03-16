@@ -10,6 +10,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.WSA;
 using Application = UnityEngine.Application;
+using UnityEngine.Networking;
 
 /// <summary>
 /// ExportToCSV.class
@@ -264,13 +265,15 @@ namespace VRQuestionnaireToolkit
             outStream.WriteLine(sb);
             outStream.Close();
 
+
+            /* CONSOLIDATING RESULTS */
             if (_studySetup.AlsoConsolidateResults)
             {
                 string header = "Answer_Participant_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition;
 
                 try
                 {
-                    if (!File.Exists(_path_all))
+                    if (!File.Exists(_path_all)) // if the summary sheet has not been created yet
                     {
                         StreamWriter sw = new StreamWriter(_path_all);
                         sw.WriteLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + header);
@@ -304,7 +307,34 @@ namespace VRQuestionnaireToolkit
                 }
             }
 
+
+            /* SENDING RESULTS TO SERVER */
+            // TODO: What form of data to send (individual sheets/summary sheet)?...
+
+
             QuestionnaireFinishedEvent.Invoke(); //notify 
+        }
+
+        // Post data to a specific server location
+        IEnumerator SendToServer(string uri, string data)
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("Survey results", data);
+
+            using (UnityWebRequest www = UnityWebRequest.Post(uri, form))
+            {
+                yield return www.SendWebRequest();
+
+                if (www.isHttpError || www.isNetworkError)
+                {
+                    Debug.LogError(www.error);
+                }
+                else
+                {
+                    string responseText = www.downloadHandler.text;
+                    Debug.Log("Response Text from the server = " + responseText);
+                }
+            }
         }
     }
 }
