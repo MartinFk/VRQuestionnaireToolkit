@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Valve.VR;
@@ -24,6 +25,10 @@ namespace VRQuestionnaireToolkit
         private AudioClip _hoverSoundClip;
         private AudioClip _selectSoundClip;
 
+        // A selecting action should trigger the feedback no earlier than 1 second after a hovering feedback is finished.
+        // This is to avoid the discomfort when two types of actions are triggered too close to each other.
+        private float feedbackInterval = 1.0f;
+        private bool flag_isBusy = false;
 
         void Start()
         {
@@ -75,30 +80,42 @@ namespace VRQuestionnaireToolkit
 
         public void OnHovering()
         {
+            CountdownFeedback(feedbackInterval);
+
             if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
             {
                 PulseBothHands(_studySetup.vibratingDurationForHovering, _studySetup.vibratingFrequencyForHovering, _studySetup.vibratingAmplitudeForHovering);
+                // Debug.Log("Controller vibration on hovering zzz!");
             }
             if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
                 _audioSource.volume = _studySetup.hoveringVolume;
                 _audioSource.PlayOneShot(_hoverSoundClip);
             }
-                
         }
 
         public void OnSelecting()
         {
-            if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
+            if (!flag_isBusy)
             {
-                PulseBothHands(_studySetup.vibratingDurationForSelecting, _studySetup.vibratingFrequencyForSelecting, _studySetup.vibratingAmplitudeForSelecting);
-            }
-            if (_studySetup.SoundOnOff) // If sound feedback is switched on
-            {
-                _audioSource.volume = _studySetup.selectingVolume;
-                _audioSource.PlayOneShot(_selectSoundClip);
+                if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
+                {
+                    PulseBothHands(_studySetup.vibratingDurationForSelecting, _studySetup.vibratingFrequencyForSelecting, _studySetup.vibratingAmplitudeForSelecting);
+                    // Debug.Log("Controller vibration on selecting zzz!");
+                }
+                if (_studySetup.SoundOnOff) // If sound feedback is switched on
+                {
+                    _audioSource.volume = _studySetup.selectingVolume;
+                    _audioSource.PlayOneShot(_selectSoundClip);
+                }
             }
         }
 
+        private async void CountdownFeedback(float _interval)
+        {
+            flag_isBusy = true;
+            await Task.Delay((int)(_interval * 1000));
+            flag_isBusy = false;
+        }
     }
 }
