@@ -309,13 +309,17 @@ namespace VRQuestionnaireToolkit
 
 
             /* SENDING RESULTS TO SERVER */
-            // TODO: What form of data to send (individual sheets/summary sheet)?...
-
+            // TODO: Test the server function; decide the form of the data to be sent.
 
             QuestionnaireFinishedEvent.Invoke(); //notify 
         }
 
-        // Post data to a specific server location
+        /// <summary>
+        /// Post data to a specific server location.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="data"></param>
+        /// <returns></returns>
         IEnumerator SendToServer(string uri, string data)
         {
             WWWForm form = new WWWForm();
