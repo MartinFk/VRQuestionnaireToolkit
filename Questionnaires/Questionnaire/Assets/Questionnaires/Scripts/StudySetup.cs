@@ -83,7 +83,9 @@ namespace VRQuestionnaireToolkit
 
 
 
-        // Resizing the questionnaire panel by hitting keys + and -
+        /// <summary>
+        /// Resize the questionnaire panel by hitting keys + and -.
+        /// </summary>
         void AdjustTransform()
         {
             // Press + to scale up
@@ -105,6 +107,11 @@ namespace VRQuestionnaireToolkit
                 SetTransformToDefault();
         }
 
+        /// <summary>
+        /// Write a string to a file at certain path.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="filePath"></param>
         void WriteStringToFile(string str, string filePath)
         {
             StreamWriter sw = new StreamWriter(filePath);
@@ -112,6 +119,11 @@ namespace VRQuestionnaireToolkit
             sw.Close();
         }
 
+        /// <summary>
+        /// Read the content of a file as a string.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
         string ReadStringFromFile(string filePath)
         {
             string str;
@@ -121,7 +133,9 @@ namespace VRQuestionnaireToolkit
             return str;
         }
 
-        // Writing the current position/rotation/scale values to a .txt file under the Resource folder.
+        /// <summary>
+        /// Write the current position/rotation/scale values to a .txt file under the Resource folder.
+        /// </summary>
         void SaveCurrentValues()
         {
             string thingsToWrite;
@@ -131,7 +145,9 @@ namespace VRQuestionnaireToolkit
             WriteStringToFile(thingsToWrite, _path);
         }
 
-        // Reading the saved values from the .txt file and setting the transform accordingly.
+        /// <summary>
+        /// Read the saved values from the .txt file and setting the transform accordingly.
+        /// </summary>
         void SetTransformToSavedValues()
         {
             string[] strings = ReadStringFromFile(_path).Split(',');
@@ -145,6 +161,9 @@ namespace VRQuestionnaireToolkit
             this.transform.localScale = new Vector3(values[7], values[8], values[9]);
         }
 
+        /// <summary>
+        /// Set the questionnaire panel to its default position, rotation and scale.
+        /// </summary>
         void SetTransformToDefault()
         {
             this.transform.localPosition = new Vector3(0.0f, 1.0f, 6.0f);
