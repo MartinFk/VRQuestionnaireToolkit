@@ -29,6 +29,11 @@ namespace VRQuestionnaireToolkit
         public string Delimiter;
         public bool UseGlobalPath;
 
+        [Header("If you want to save the results to a server:")]
+        public bool alsoSaveToServer = false;
+        [Tooltip("The target URI to send the results to")]
+        public string targetURI = "http://www.example-server.com/survey-results.php";
+
         private string _path;
         private string _path_all;
         private List<string[]> _csvRows;
@@ -64,6 +69,10 @@ namespace VRQuestionnaireToolkit
             {
                 _fileType = "txt";
             }
+
+            // Just for testing
+            if (alsoSaveToServer)
+                StartCoroutine(SendToServer(targetURI, "test test test"));
         }
 
         public void Save()
@@ -323,7 +332,7 @@ namespace VRQuestionnaireToolkit
         IEnumerator SendToServer(string uri, string data)
         {
             WWWForm form = new WWWForm();
-            form.AddField("Survey results", data);
+            form.AddField("unitypost", data);
 
             using (UnityWebRequest www = UnityWebRequest.Post(uri, form))
             {
@@ -331,12 +340,12 @@ namespace VRQuestionnaireToolkit
 
                 if (www.isHttpError || www.isNetworkError)
                 {
-                    Debug.LogError(www.error);
+                    Debug.LogError(www.error + "\nPlease check the validity of the server URI.");
                 }
                 else
                 {
                     string responseText = www.downloadHandler.text;
-                    Debug.Log("Response Text from the server = " + responseText);
+                    Debug.Log("Response Text from the server: " + responseText);
                 }
             }
         }
