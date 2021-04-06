@@ -30,9 +30,9 @@ namespace VRQuestionnaireToolkit
         public bool UseGlobalPath;
 
         [Header("If you want to save the results to a server:")]
-        public bool alsoSaveToServer = false;
+        public bool AlsoSaveToServer = false;
         [Tooltip("The target URI to send the results to")]
-        public string targetURI = "http://www.example-server.com/survey-results.php";
+        public string TargetURI = "http://www.example-server.com/survey-results.php";
 
         private List<string[]> _csvRows;
         private GameObject _pageFactory;
@@ -272,10 +272,10 @@ namespace VRQuestionnaireToolkit
             outStream.Close();
 
             /* SENDING RESULTS TO SERVER */
-            if (alsoSaveToServer)
+            if (AlsoSaveToServer)
             {
                 string allText = System.IO.File.ReadAllText(_path);
-                StartCoroutine(SendToServer(targetURI, _completeFileName, allText));
+                StartCoroutine(SendToServer(TargetURI, _completeFileName, allText));
             }
 
             /* CONSOLIDATING RESULTS */
@@ -318,10 +318,10 @@ namespace VRQuestionnaireToolkit
                     Debug.Log(ex.Message);
                 }
 
-                if (alsoSaveToServer)
+                if (AlsoSaveToServer)
                 {
                     string allText = System.IO.File.ReadAllText(_path_allResults);
-                    StartCoroutine(SendToServer(targetURI, _completeFileName_allResults, allText));
+                    StartCoroutine(SendToServer(TargetURI, _completeFileName_allResults, allText));
                 }
             }
 
