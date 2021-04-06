@@ -34,8 +34,6 @@ namespace VRQuestionnaireToolkit
         [Tooltip("The target URI to send the results to")]
         public string targetURI = "http://www.example-server.com/survey-results.php";
 
-        private string _path;
-        private string _path_all;
         private List<string[]> _csvRows;
         private GameObject _pageFactory;
         private GameObject _vrQuestionnaireToolkit;
@@ -44,13 +42,13 @@ namespace VRQuestionnaireToolkit
         private string _fileType;
         private string _questionnaireID;
 
-        public enum FileTyps
+        public enum FileType
         {
             Csv,
             Txt
         }
 
-        public FileTyps Filetyp;
+        public FileType Filetype;
 
         public UnityEvent QuestionnaireFinishedEvent;
 
@@ -63,16 +61,12 @@ namespace VRQuestionnaireToolkit
             if (QuestionnaireFinishedEvent == null)
                 QuestionnaireFinishedEvent = new UnityEvent();
 
-            if (Filetyp == 0)
+            if (Filetype == 0)
                 _fileType = "csv";
             else
             {
                 _fileType = "txt";
             }
-
-            // Just for testing
-            if (alsoSaveToServer)
-                StartCoroutine(SendToServer(targetURI, "test test test"));
         }
 
         public void Save()
@@ -252,8 +246,11 @@ namespace VRQuestionnaireToolkit
 
             //-----Processing responses into the specified data format-----//
 
-            _path = _folderPath + "questionnaireID_" + _questionnaireID + "_participantID_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition + "_" + FileName + "." + _fileType;
-            _path_all = _folderPath + "questionnaireID_" + _questionnaireID + "_ALL_" + FileName + "." + _fileType;
+            string _completeFileName = "questionnaireID_" + _questionnaireID + "_participantID_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition + "_" + FileName + "." + _fileType;
+            string _completeFileName_allResults = "questionnaireID_" + _questionnaireID + "_ALL_" + FileName + "." + _fileType;
+            string _path = _folderPath + _completeFileName;
+            string _path_allResults = _folderPath + _completeFileName_allResults;
+
 
             string[][] output = new string[_csvRows.Count][];
 
@@ -274,6 +271,12 @@ namespace VRQuestionnaireToolkit
             outStream.WriteLine(sb);
             outStream.Close();
 
+            /* SENDING RESULTS TO SERVER */
+            if (alsoSaveToServer)
+            {
+                string allText = System.IO.File.ReadAllText(_path);
+                StartCoroutine(SendToServer(targetURI, _completeFileName, allText));
+            }
 
             /* CONSOLIDATING RESULTS */
             if (_studySetup.AlsoConsolidateResults)
@@ -282,21 +285,21 @@ namespace VRQuestionnaireToolkit
 
                 try
                 {
-                    if (!File.Exists(_path_all)) // if the summary sheet has not been created yet
+                    if (!File.Exists(_path_allResults)) // if the summary sheet has not been created yet
                     {
-                        StreamWriter sw = new StreamWriter(_path_all);
+                        StreamWriter sw = new StreamWriter(_path_allResults);
                         sw.WriteLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + header);
                         for (int row = 1; row < length; row++)
                         {
                             sw.WriteLine(string.Join(Delimiter, output[row]));
                         }
                         sw.Close();
-                        print("Answers consolidated in path: " + _path_all);
+                        print("Answers consolidated in path: " + _path_allResults);
                     }
                     else
                     {
                         StringBuilder sb2 = new StringBuilder();
-                        StreamReader sr = new StreamReader(_path_all);
+                        StreamReader sr = new StreamReader(_path_allResults);
                         sb2.AppendLine(sr.ReadLine() + Delimiter + header);
                         for (int row = 1; row < length; row++)
                         {
@@ -304,15 +307,21 @@ namespace VRQuestionnaireToolkit
                         }
                         sr.Close();
 
-                        StreamWriter sw = System.IO.File.CreateText(_path_all);
+                        StreamWriter sw = System.IO.File.CreateText(_path_allResults);
                         sw.WriteLine(sb2);
                         sw.Close();
-                        print("Answers consolidated in path: " + _path_all);
+                        print("Answers consolidated in path: " + _path_allResults);
                     }
                 }
                 catch (IOException ex)
                 {
                     Debug.Log(ex.Message);
+                }
+
+                if (alsoSaveToServer)
+                {
+                    string allText = System.IO.File.ReadAllText(_path_allResults);
+                    StartCoroutine(SendToServer(targetURI, _completeFileName_allResults, allText));
                 }
             }
 
@@ -327,12 +336,14 @@ namespace VRQuestionnaireToolkit
         /// Post data to a specific server location.
         /// </summary>
         /// <param name="uri"></param>
-        /// <param name="data"></param>
+        /// <param name="filename"></param>
+        /// <param name="inputData"></param>
         /// <returns></returns>
-        IEnumerator SendToServer(string uri, string data)
+        IEnumerator SendToServer(string uri, string filename, string inputData)
         {
             WWWForm form = new WWWForm();
-            form.AddField("unitypost", data);
+            form.AddField("fileName", filename);
+            form.AddField("inputData", inputData);
 
             using (UnityWebRequest www = UnityWebRequest.Post(uri, form))
             {
@@ -345,7 +356,7 @@ namespace VRQuestionnaireToolkit
                 else
                 {
                     string responseText = www.downloadHandler.text;
-                    Debug.Log("Response Text from the server: " + responseText);
+                    Debug.Log("Message from the server: " + responseText);
                 }
             }
         }
