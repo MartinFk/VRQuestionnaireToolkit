@@ -53,11 +53,6 @@ namespace VRQuestionnaireToolkit
         [Range(0.0f, 1.0f)]
         public float selectingVolume = 1.0f;
 
-        [Header("If you want to save the results to a server:")]
-        public bool alsoSaveToServer = false;
-        [Tooltip("The target URI to send the results to")]
-        public string targetURI = "http://www.example-server.com/survey-results.php";
-
         private string _path; // file path to write the remembered transform values to
 
         void Start()

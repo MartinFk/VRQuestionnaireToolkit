@@ -307,38 +307,7 @@ namespace VRQuestionnaireToolkit
                 }
             }
 
-
-            /* SENDING RESULTS TO SERVER */
-            // TODO: Test the server function; decide the form of the data to be sent.
-
             QuestionnaireFinishedEvent.Invoke(); //notify 
-        }
-
-        /// <summary>
-        /// Post data to a specific server location.
-        /// </summary>
-        /// <param name="uri"></param>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        IEnumerator SendToServer(string uri, string data)
-        {
-            WWWForm form = new WWWForm();
-            form.AddField("Survey results", data);
-
-            using (UnityWebRequest www = UnityWebRequest.Post(uri, form))
-            {
-                yield return www.SendWebRequest();
-
-                if (www.isHttpError || www.isNetworkError)
-                {
-                    Debug.LogError(www.error);
-                }
-                else
-                {
-                    string responseText = www.downloadHandler.text;
-                    Debug.Log("Response Text from the server = " + responseText);
-                }
-            }
         }
     }
 }
