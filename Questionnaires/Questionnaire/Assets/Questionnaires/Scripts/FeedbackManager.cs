@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Valve.VR;
@@ -7,15 +8,7 @@ using Valve.VR;
 namespace VRQuestionnaireToolkit
 {
     public class FeedbackManager : MonoBehaviour
-    {
-        //[Range(0, 1)]
-        //public float _duration = 0.05f;
-        //[Range(0, 200)]
-        //public float _frequency = 1.0f;
-        //[Range(0, 100)]
-        //public float _amplitude = 5.0f;
-
-        
+    {        
         public SteamVR_Action_Vibration hapticAction;
 
         // To later access the boolean state of tactile/sound feedback.
@@ -24,6 +17,10 @@ namespace VRQuestionnaireToolkit
         private AudioClip _hoverSoundClip;
         private AudioClip _selectSoundClip;
 
+        // A selecting action should trigger the feedback no earlier than 1 second after a hovering feedback is finished.
+        // This is to avoid the discomfort when two types of actions are triggered too close to each other.
+        private float feedback_break = 1.0f; // one second
+        private bool flag_isBusy = false;
 
         void Start()
         {
@@ -34,12 +31,6 @@ namespace VRQuestionnaireToolkit
             _selectSoundClip = _studySetup.soundClipForSelecting;
             AddTriggerListener();
         }
-
-        //public void Pulse(SteamVR_Input_Sources source)
-        //{
-        //    //hapticAction.Execute(0, _duration, _frequency, _amplitude, source);
-        //    hapticAction.Execute(0, _studySetup.duration, _studySetup.frequency, _studySetup.amplitude, source);
-        //}
 
         public void PulseBothHands(float duration, float frequency, float amplitude)
         {
@@ -56,7 +47,9 @@ namespace VRQuestionnaireToolkit
             
         }
 
-        // To add listeners to the hovering event over the current element.  
+        /// <summary>
+        /// Add listeners to the hovering/selecting over the current element. 
+        /// </summary>
         public void AddTriggerListener()
         {
             gameObject.AddComponent<EventTrigger>();
@@ -75,30 +68,46 @@ namespace VRQuestionnaireToolkit
 
         public void OnHovering()
         {
+            CountdownFeedback(feedback_break);
+
             if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
             {
                 PulseBothHands(_studySetup.vibratingDurationForHovering, _studySetup.vibratingFrequencyForHovering, _studySetup.vibratingAmplitudeForHovering);
+                // Debug.Log("Controller vibration on hovering zzz!");
             }
             if (_studySetup.SoundOnOff) // If sound feedback is switched on
             {
                 _audioSource.volume = _studySetup.hoveringVolume;
                 _audioSource.PlayOneShot(_hoverSoundClip);
             }
-                
         }
 
         public void OnSelecting()
         {
-            if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
+            if (!flag_isBusy)
             {
-                PulseBothHands(_studySetup.vibratingDurationForSelecting, _studySetup.vibratingFrequencyForSelecting, _studySetup.vibratingAmplitudeForSelecting);
-            }
-            if (_studySetup.SoundOnOff) // If sound feedback is switched on
-            {
-                _audioSource.volume = _studySetup.selectingVolume;
-                _audioSource.PlayOneShot(_selectSoundClip);
+                if (_studySetup.ControllerTactileFeedbackOnOff) // If tactile feedback is switched on
+                {
+                    PulseBothHands(_studySetup.vibratingDurationForSelecting, _studySetup.vibratingFrequencyForSelecting, _studySetup.vibratingAmplitudeForSelecting);
+                    // Debug.Log("Controller vibration on selecting zzz!");
+                }
+                if (_studySetup.SoundOnOff) // If sound feedback is switched on
+                {
+                    _audioSource.volume = _studySetup.selectingVolume;
+                    _audioSource.PlayOneShot(_selectSoundClip);
+                }
             }
         }
 
+        /// <summary>
+        /// Toggle the flag that indicates whether break between feedbacks is finished.
+        /// </summary>
+        /// <param name="_interval"></param>
+        private async void CountdownFeedback(float _interval)
+        {
+            flag_isBusy = true;
+            await Task.Delay((int)(_interval * 1000));
+            flag_isBusy = false;
+        }
     }
 }
