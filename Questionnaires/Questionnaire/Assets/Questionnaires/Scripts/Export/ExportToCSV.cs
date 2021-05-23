@@ -325,10 +325,6 @@ namespace VRQuestionnaireToolkit
                 }
             }
 
-
-            /* SENDING RESULTS TO SERVER */
-            // TODO: Test the server function; decide the form of the data to be sent.
-
             QuestionnaireFinishedEvent.Invoke(); //notify 
         }
 
