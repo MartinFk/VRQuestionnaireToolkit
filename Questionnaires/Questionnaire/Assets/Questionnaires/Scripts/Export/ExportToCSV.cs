@@ -24,13 +24,17 @@ namespace VRQuestionnaireToolkit
 {
     public class ExportToCSV : MonoBehaviour
     {
-        public string StorePath;
         public string FileName;
         public string Delimiter;
+
+        [Header("Configure if you want to save the results to local storage:")]
+        [Tooltip("Save results locally on this device.")]
+        public bool SaveToLocal = true;
+        public string StorePath;
         public bool UseGlobalPath;
 
-        [Header("If you want to save the results to a server:")]
-        public bool AlsoSaveToServer = false;
+        [Header("Configure if you want to save the results to remote server:")]
+        public bool SaveToServer = false;
         [Tooltip("The target URI to send the results to")]
         public string TargetURI = "http://www.example-server.com/survey-results.php";
 
@@ -272,7 +276,7 @@ namespace VRQuestionnaireToolkit
             outStream.Close();
 
             /* SENDING RESULTS TO SERVER */
-            if (AlsoSaveToServer)
+            if (SaveToServer)
             {
                 string allText = System.IO.File.ReadAllText(_path);
                 StartCoroutine(SendToServer(TargetURI, _completeFileName, allText));
@@ -318,7 +322,7 @@ namespace VRQuestionnaireToolkit
                     Debug.Log(ex.Message);
                 }
 
-                if (AlsoSaveToServer)
+                if (SaveToServer)
                 {
                     string allText = System.IO.File.ReadAllText(_path_allResults);
                     StartCoroutine(SendToServer(TargetURI, _completeFileName_allResults, allText));
