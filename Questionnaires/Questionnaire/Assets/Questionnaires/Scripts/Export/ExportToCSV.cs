@@ -26,6 +26,12 @@ namespace VRQuestionnaireToolkit
     {
         public string FileName;
         public string Delimiter;
+        public enum FileType
+        {
+            Csv,
+            Txt
+        }
+        public FileType Filetype;
 
         [Header("Configure if you want to save the results to local storage:")]
         [Tooltip("Save results locally on this device.")]
@@ -45,14 +51,6 @@ namespace VRQuestionnaireToolkit
         private string _folderPath;
         private string _fileType;
         private string _questionnaireID;
-
-        public enum FileType
-        {
-            Csv,
-            Txt
-        }
-
-        public FileType Filetype;
 
         public UnityEvent QuestionnaireFinishedEvent;
 
