@@ -268,10 +268,7 @@ namespace VRQuestionnaireToolkit
             for (int index = 0; index < length; index++)
                 sb.AppendLine(string.Join(Delimiter, output[index]));
 
-            print("Answers stored in path: " + _path);
-            StreamWriter outStream = System.IO.File.CreateText(_path);
-            outStream.WriteLine(sb);
-            outStream.Close();
+            WriteToLocal(_path, sb);
 
             /* SENDING RESULTS TO SERVER */
             if (SaveToServer)
@@ -328,6 +325,14 @@ namespace VRQuestionnaireToolkit
             }
 
             QuestionnaireFinishedEvent.Invoke(); //notify 
+        }
+
+        void WriteToLocal(string localPath, StringBuilder content)
+        {
+            print("Answers stored in path: " + localPath);
+            StreamWriter outStream = System.IO.File.CreateText(localPath);
+            outStream.WriteLine(content);
+            outStream.Close();
         }
 
         /// <summary>
