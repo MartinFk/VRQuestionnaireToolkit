@@ -268,13 +268,16 @@ namespace VRQuestionnaireToolkit
             for (int index = 0; index < length; index++)
                 sb.AppendLine(string.Join(Delimiter, output[index]));
 
-            WriteToLocal(_path, sb);
+            /* WRITING RESULTS TO LOCAL STORAGE */
+            if (SaveToLocal)
+            {
+                WriteToLocal(_path, sb);
+            }
 
-            /* SENDING RESULTS TO SERVER */
+            /* SENDING RESULTS TO REMOTE SERVER */
             if (SaveToServer)
             {
-                string allText = System.IO.File.ReadAllText(_path);
-                StartCoroutine(SendToServer(TargetURI, _completeFileName, allText));
+                StartCoroutine(SendToServer(TargetURI, _completeFileName, sb.ToString()));
             }
 
             /* CONSOLIDATING RESULTS */
