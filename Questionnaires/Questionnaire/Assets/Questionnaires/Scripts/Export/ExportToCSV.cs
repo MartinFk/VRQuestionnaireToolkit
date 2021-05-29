@@ -129,6 +129,7 @@ namespace VRQuestionnaireToolkit
             for (int i = 1; i < _pageFactory.GetComponent<PageFactory>().NumPages - 1; i++)
                 _pageFactory.GetComponent<PageFactory>().PageList[i].SetActive(true);
 
+            #region CONSTRUCTING RESULTS
             // read participants' responses 
             for (int i = 0; i < _pageFactory.GetComponent<PageFactory>().QuestionList.Count; i++)
             {
@@ -255,6 +256,7 @@ namespace VRQuestionnaireToolkit
                     }
                 }
             }
+            #endregion
 
             // disable all GameObjects (except the last page) 
             for (int i = 1; i < _pageFactory.GetComponent<PageFactory>().NumPages - 1; i++)
@@ -311,6 +313,12 @@ namespace VRQuestionnaireToolkit
             QuestionnaireFinishedEvent.Invoke(); //notify 
         }
 
+        /// <summary>
+        /// Consolidate all results to a StringBuilder, written to be directly written.
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <param name="newData"></param>
+        /// <returns></returns>
         StringBuilder GetConsolidatedContent(string filepath, string[][] newData)
         {
             StringBuilder sb_all_content = new StringBuilder();
@@ -345,6 +353,11 @@ namespace VRQuestionnaireToolkit
             return sb_all_content;
         }
 
+        /// <summary>
+        /// Write a StringBuilder to a local file.
+        /// </summary>
+        /// <param name="localPath"></param>
+        /// <param name="content"></param>
         void WriteToLocal(string localPath, StringBuilder content)
         {
             print("Answers stored in path: " + localPath);
@@ -389,6 +402,11 @@ namespace VRQuestionnaireToolkit
             }
         }
 
+        /// <summary>
+        /// Check if the provided server URI is valid.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns></returns>
         IEnumerator CheckURIValidity(string uri)
         {
             UnityWebRequest www = new UnityWebRequest(uri);
