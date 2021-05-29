@@ -474,7 +474,7 @@ PrefabInstance:
     - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: SoundOnOff
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
@@ -541,6 +541,21 @@ PrefabInstance:
       propertyPath: alsoSaveToServer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: AlsoConsolidateResults
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: SoundClipForHovering
+      value: 
+      objectReference: {fileID: 8300000, guid: d7d08c266925c5446947a004fde53aa0, type: 3}
+    - target: {fileID: 8697000387260259616, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: SoundClipForSelecting
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b660b21fad7af34e806c3f3c4eb8868, type: 3}
     - target: {fileID: 8697000387260259617, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: m_Name
@@ -714,6 +729,26 @@ PrefabInstance:
     - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
         type: 3}
       propertyPath: alsoSaveToServer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: UseGlobalPath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: TargetURI
+      value: http://localhost/test-vr-questionnaire/survey-results.php
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: SaveToServer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697000388396706263, guid: 93494b0f3d397d74ba1458871f004384,
+        type: 3}
+      propertyPath: SaveToLocal
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
