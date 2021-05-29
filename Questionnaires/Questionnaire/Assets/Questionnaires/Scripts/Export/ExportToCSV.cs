@@ -24,13 +24,23 @@ namespace VRQuestionnaireToolkit
 {
     public class ExportToCSV : MonoBehaviour
     {
-        public string StorePath;
         public string FileName;
         public string Delimiter;
+        public enum FileType
+        {
+            Csv,
+            Txt
+        }
+        public FileType Filetype;
+
+        [Header("Configure if you want to save the results to local storage:")]
+        [Tooltip("Save results locally on this device.")]
+        public bool SaveToLocal = true;
+        public string StorePath;
         public bool UseGlobalPath;
 
-        [Header("If you want to save the results to a server:")]
-        public bool AlsoSaveToServer = false;
+        [Header("Configure if you want to save the results to remote server:")]
+        public bool SaveToServer = false;
         [Tooltip("The target URI to send the results to")]
         public string TargetURI = "http://www.example-server.com/survey-results.php";
 
@@ -41,14 +51,7 @@ namespace VRQuestionnaireToolkit
         private string _folderPath;
         private string _fileType;
         private string _questionnaireID;
-
-        public enum FileType
-        {
-            Csv,
-            Txt
-        }
-
-        public FileType Filetype;
+        private string[] csvTitleRow = new string[4];
 
         public UnityEvent QuestionnaireFinishedEvent;
 
@@ -57,6 +60,7 @@ namespace VRQuestionnaireToolkit
         {
             _vrQuestionnaireToolkit = GameObject.FindGameObjectWithTag("VRQuestionnaireToolkit");
             _studySetup = _vrQuestionnaireToolkit.GetComponent<StudySetup>();
+            _folderPath = UseGlobalPath ? StorePath : Application.dataPath + StorePath;
 
             if (QuestionnaireFinishedEvent == null)
                 QuestionnaireFinishedEvent = new UnityEvent();
@@ -67,25 +71,39 @@ namespace VRQuestionnaireToolkit
             {
                 _fileType = "txt";
             }
+
+            if (!(SaveToLocal | SaveToServer)) // if neither of the box is checked, warn the user that the data won't be saved.
+            {
+                Debug.LogError("You have chosen to save the results NEITHER locally NOR remotely. Please consider going to the inspector of ExportToCSV and check one of the save-to options, otherwise your data will be lost!!");
+            }
+            else
+            {
+                if (SaveToLocal)
+                {
+                    try // create a new folder if the specified folder does not exist.
+                    {
+                        if (!Directory.Exists(_folderPath))
+                        {
+                            Directory.CreateDirectory(_folderPath);
+                            Debug.LogWarning("Local folder path does not exist! New folder created at " + _folderPath);
+                        }
+                    }
+                    catch (IOException ex)
+                    {
+                        Debug.Log(ex.Message);
+                    }
+                }
+
+                if (SaveToServer)
+                {
+                    // check if the provided uri is valid
+                    StartCoroutine(CheckURIValidity(TargetURI));
+                }
+            }
         }
 
         public void Save()
         {
-            _folderPath = UseGlobalPath ? StorePath : Application.dataPath + StorePath;
-            
-            try // Create a new folder if the specified folder does not exist.
-            {
-                if (!Directory.Exists(_folderPath))
-                {
-                    Directory.CreateDirectory(_folderPath);
-                    Debug.LogWarning("Folder path does not exist! New folder created at " + _folderPath);
-                }
-            }
-            catch (IOException ex)
-            {
-                Debug.Log(ex.Message);
-            }
-
             int currentQuestionnaire = 1;
 
             for (int i = 0; i < _vrQuestionnaireToolkit.GetComponent<GenerateQuestionnaire>().Questionnaires.Count; i++)
@@ -98,8 +116,7 @@ namespace VRQuestionnaireToolkit
             _pageFactory = GameObject.FindGameObjectWithTag("QuestionnaireFactory");
             _csvRows = new List<string[]>();
 
-            // creating title rows
-            string[] csvTitleRow = new string[4];
+            // create title rows
             csvTitleRow[0] = "QuestionType";
             csvTitleRow[1] = "Question";
             csvTitleRow[2] = "QuestionID";
@@ -112,6 +129,7 @@ namespace VRQuestionnaireToolkit
             for (int i = 1; i < _pageFactory.GetComponent<PageFactory>().NumPages - 1; i++)
                 _pageFactory.GetComponent<PageFactory>().PageList[i].SetActive(true);
 
+            #region CONSTRUCTING RESULTS
             // read participants' responses 
             for (int i = 0; i < _pageFactory.GetComponent<PageFactory>().QuestionList.Count; i++)
             {
@@ -238,6 +256,7 @@ namespace VRQuestionnaireToolkit
                     }
                 }
             }
+            #endregion
 
             // disable all GameObjects (except the last page) 
             for (int i = 1; i < _pageFactory.GetComponent<PageFactory>().NumPages - 1; i++)
@@ -253,79 +272,105 @@ namespace VRQuestionnaireToolkit
 
 
             string[][] output = new string[_csvRows.Count][];
-
             for (int i = 0; i < output.Length; i++)
             {
-                output[i] = _csvRows[i];
+                output[i] = _csvRows[i]; // copy all data to a 2d-array of string
             }
 
-            int length = output.GetLength(0);
+            StringBuilder contentOfResult = new StringBuilder();
 
-            StringBuilder sb = new StringBuilder();
+            for (int index = 0; index < output.GetLength(0); index++)
+                contentOfResult.AppendLine(string.Join(Delimiter, output[index]));
 
-            for (int index = 0; index < length; index++)
-                sb.AppendLine(string.Join(Delimiter, output[index]));
-
-            print("Answers stored in path: " + _path);
-            StreamWriter outStream = System.IO.File.CreateText(_path);
-            outStream.WriteLine(sb);
-            outStream.Close();
-
-            /* SENDING RESULTS TO SERVER */
-            if (AlsoSaveToServer)
+            /* WRITING RESULTS TO LOCAL STORAGE */
+            if (SaveToLocal)
             {
-                string allText = System.IO.File.ReadAllText(_path);
-                StartCoroutine(SendToServer(TargetURI, _completeFileName, allText));
+                WriteToLocal(_path, contentOfResult);
+            }
+
+            /* SENDING RESULTS TO REMOTE SERVER */
+            if (SaveToServer)
+            {
+                StartCoroutine(SendToServer(TargetURI, _completeFileName, contentOfResult.ToString()));
             }
 
             /* CONSOLIDATING RESULTS */
             if (_studySetup.AlsoConsolidateResults)
             {
-                string header = "Answer_Participant_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition;
-
-                try
+                StringBuilder content_all_results = GetConsolidatedContent(_path_allResults, output);
+                
+                if (SaveToLocal)
                 {
-                    if (!File.Exists(_path_allResults)) // if the summary sheet has not been created yet
-                    {
-                        StreamWriter sw = new StreamWriter(_path_allResults);
-                        sw.WriteLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + header);
-                        for (int row = 1; row < length; row++)
-                        {
-                            sw.WriteLine(string.Join(Delimiter, output[row]));
-                        }
-                        sw.Close();
-                        print("Answers consolidated in path: " + _path_allResults);
-                    }
-                    else
-                    {
-                        StringBuilder sb2 = new StringBuilder();
-                        StreamReader sr = new StreamReader(_path_allResults);
-                        sb2.AppendLine(sr.ReadLine() + Delimiter + header);
-                        for (int row = 1; row < length; row++)
-                        {
-                            sb2.AppendLine(sr.ReadLine() + Delimiter + output[row][3]); // repeat the old lines and append the new answer at the end
-                        }
-                        sr.Close();
-
-                        StreamWriter sw = System.IO.File.CreateText(_path_allResults);
-                        sw.WriteLine(sb2);
-                        sw.Close();
-                        print("Answers consolidated in path: " + _path_allResults);
-                    }
-                }
-                catch (IOException ex)
-                {
-                    Debug.Log(ex.Message);
+                    WriteToLocal(_path_allResults, content_all_results);
                 }
 
-                if (AlsoSaveToServer)
+                if (SaveToServer)
                 {
-                    string allText = System.IO.File.ReadAllText(_path_allResults);
-                    StartCoroutine(SendToServer(TargetURI, _completeFileName_allResults, allText));
+                    StartCoroutine(SendToServer(TargetURI, _completeFileName_allResults, content_all_results.ToString()));
                 }
             }
 
             QuestionnaireFinishedEvent.Invoke(); //notify 
+        }
+
+        /// <summary>
+        /// Consolidate all results to a StringBuilder, written to be directly written.
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <param name="newData"></param>
+        /// <returns></returns>
+        StringBuilder GetConsolidatedContent(string filepath, string[][] newData)
+        {
+            StringBuilder sb_all_content = new StringBuilder();
+
+            string header = "Answer_Participant_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition; // header for this current participant
+
+            try
+            {
+                if (!File.Exists(filepath))
+                {
+                    sb_all_content.AppendLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + header); // first row being the headers
+                    for (int row = 1; row < newData.GetLength(0); row++) // from the second row
+                    {
+                        sb_all_content.AppendLine(string.Join(Delimiter, newData[row]));
+                    }
+                }
+                else
+                {
+                    StreamReader sr = new StreamReader(filepath);
+                    sb_all_content.AppendLine(sr.ReadLine() + Delimiter + header); // copy the first row in the existing file and add a header for the new data
+                    for (int row = 1; row < newData.GetLength(0); row++) // from the second row
+                    {
+                        sb_all_content.AppendLine(sr.ReadLine() + Delimiter + newData[row][3]); // copy old data and add new data
+                    }
+                    sr.Close();
+                }
+            }
+            catch (IOException ex)
+            {
+                Debug.Log(ex.Message);
+            }
+            return sb_all_content;
+        }
+
+        /// <summary>
+        /// Write a StringBuilder to a local file.
+        /// </summary>
+        /// <param name="localPath"></param>
+        /// <param name="content"></param>
+        void WriteToLocal(string localPath, StringBuilder content)
+        {
+            print("Answers stored in path: " + localPath);
+            try
+            {
+                StreamWriter outStream = System.IO.File.CreateText(localPath);
+                outStream.WriteLine(content);
+                outStream.Close();
+            }
+            catch (IOException ex)
+            {
+                Debug.Log(ex.Message);
+            }
         }
 
         /// <summary>
@@ -354,6 +399,22 @@ namespace VRQuestionnaireToolkit
                     string responseText = www.downloadHandler.text;
                     Debug.Log("Message from the server: " + responseText);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Check if the provided server URI is valid.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns></returns>
+        IEnumerator CheckURIValidity(string uri)
+        {
+            UnityWebRequest www = new UnityWebRequest(uri);
+            yield return www.SendWebRequest();
+
+            if (www.isHttpError || www.isNetworkError)
+            {
+                Debug.LogError(www.error + "\nPlease check the validity of the server URI.");
             }
         }
     }
