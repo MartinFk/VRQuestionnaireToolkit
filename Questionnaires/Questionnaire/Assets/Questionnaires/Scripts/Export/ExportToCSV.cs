@@ -60,6 +60,7 @@ namespace VRQuestionnaireToolkit
         {
             _vrQuestionnaireToolkit = GameObject.FindGameObjectWithTag("VRQuestionnaireToolkit");
             _studySetup = _vrQuestionnaireToolkit.GetComponent<StudySetup>();
+            _folderPath = UseGlobalPath ? StorePath : Application.dataPath + StorePath;
 
             if (QuestionnaireFinishedEvent == null)
                 QuestionnaireFinishedEvent = new UnityEvent();
@@ -70,25 +71,39 @@ namespace VRQuestionnaireToolkit
             {
                 _fileType = "txt";
             }
+
+            if (!(SaveToLocal | SaveToServer)) // if neither of the box is checked, warn the user that the data won't be saved.
+            {
+                Debug.LogError("You have chosen to save the results NEITHER locally NOR remotely. Please consider going to the inspector of ExportToCSV and check one of the save-to options, otherwise your data will be lost!!");
+            }
+            else
+            {
+                if (SaveToLocal)
+                {
+                    try // create a new folder if the specified folder does not exist.
+                    {
+                        if (!Directory.Exists(_folderPath))
+                        {
+                            Directory.CreateDirectory(_folderPath);
+                            Debug.LogWarning("Local folder path does not exist! New folder created at " + _folderPath);
+                        }
+                    }
+                    catch (IOException ex)
+                    {
+                        Debug.Log(ex.Message);
+                    }
+                }
+
+                if (SaveToServer)
+                {
+                    // check if the provided uri is valid
+                    StartCoroutine(CheckURIValidity(TargetURI));
+                }
+            }
         }
 
         public void Save()
         {
-            _folderPath = UseGlobalPath ? StorePath : Application.dataPath + StorePath;
-            
-            try // Create a new folder if the specified folder does not exist.
-            {
-                if (!Directory.Exists(_folderPath))
-                {
-                    Directory.CreateDirectory(_folderPath);
-                    Debug.LogWarning("Folder path does not exist! New folder created at " + _folderPath);
-                }
-            }
-            catch (IOException ex)
-            {
-                Debug.Log(ex.Message);
-            }
-
             int currentQuestionnaire = 1;
 
             for (int i = 0; i < _vrQuestionnaireToolkit.GetComponent<GenerateQuestionnaire>().Questionnaires.Count; i++)
@@ -101,7 +116,7 @@ namespace VRQuestionnaireToolkit
             _pageFactory = GameObject.FindGameObjectWithTag("QuestionnaireFactory");
             _csvRows = new List<string[]>();
 
-            // creating title rows
+            // create title rows
             csvTitleRow[0] = "QuestionType";
             csvTitleRow[1] = "Question";
             csvTitleRow[2] = "QuestionID";
@@ -371,6 +386,17 @@ namespace VRQuestionnaireToolkit
                     string responseText = www.downloadHandler.text;
                     Debug.Log("Message from the server: " + responseText);
                 }
+            }
+        }
+
+        IEnumerator CheckURIValidity(string uri)
+        {
+            UnityWebRequest www = new UnityWebRequest(uri);
+            yield return www.SendWebRequest();
+
+            if (www.isHttpError || www.isNetworkError)
+            {
+                Debug.LogError(www.error + "\nPlease check the validity of the server URI.");
             }
         }
     }
