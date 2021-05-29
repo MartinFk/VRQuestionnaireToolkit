@@ -51,6 +51,7 @@ namespace VRQuestionnaireToolkit
         private string _folderPath;
         private string _fileType;
         private string _questionnaireID;
+        private string[] csvTitleRow = new string[4];
 
         public UnityEvent QuestionnaireFinishedEvent;
 
@@ -101,7 +102,6 @@ namespace VRQuestionnaireToolkit
             _csvRows = new List<string[]>();
 
             // creating title rows
-            string[] csvTitleRow = new string[4];
             csvTitleRow[0] = "QuestionType";
             csvTitleRow[1] = "Question";
             csvTitleRow[2] = "QuestionID";
@@ -255,87 +255,94 @@ namespace VRQuestionnaireToolkit
 
 
             string[][] output = new string[_csvRows.Count][];
-
             for (int i = 0; i < output.Length; i++)
             {
-                output[i] = _csvRows[i];
+                output[i] = _csvRows[i]; // copy all data to a 2d-array of string
             }
 
-            int length = output.GetLength(0);
+            StringBuilder contentOfResult = new StringBuilder();
 
-            StringBuilder sb = new StringBuilder();
-
-            for (int index = 0; index < length; index++)
-                sb.AppendLine(string.Join(Delimiter, output[index]));
+            for (int index = 0; index < output.GetLength(0); index++)
+                contentOfResult.AppendLine(string.Join(Delimiter, output[index]));
 
             /* WRITING RESULTS TO LOCAL STORAGE */
             if (SaveToLocal)
             {
-                WriteToLocal(_path, sb);
+                WriteToLocal(_path, contentOfResult);
             }
 
             /* SENDING RESULTS TO REMOTE SERVER */
             if (SaveToServer)
             {
-                StartCoroutine(SendToServer(TargetURI, _completeFileName, sb.ToString()));
+                StartCoroutine(SendToServer(TargetURI, _completeFileName, contentOfResult.ToString()));
             }
 
             /* CONSOLIDATING RESULTS */
             if (_studySetup.AlsoConsolidateResults)
             {
-                string header = "Answer_Participant_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition;
-
-                try
+                StringBuilder content_all_results = GetConsolidatedContent(_path_allResults, output);
+                
+                if (SaveToLocal)
                 {
-                    if (!File.Exists(_path_allResults)) // if the summary sheet has not been created yet
-                    {
-                        StreamWriter sw = new StreamWriter(_path_allResults);
-                        sw.WriteLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + header);
-                        for (int row = 1; row < length; row++)
-                        {
-                            sw.WriteLine(string.Join(Delimiter, output[row]));
-                        }
-                        sw.Close();
-                        print("Answers consolidated in path: " + _path_allResults);
-                    }
-                    else
-                    {
-                        StringBuilder sb2 = new StringBuilder();
-                        StreamReader sr = new StreamReader(_path_allResults);
-                        sb2.AppendLine(sr.ReadLine() + Delimiter + header);
-                        for (int row = 1; row < length; row++)
-                        {
-                            sb2.AppendLine(sr.ReadLine() + Delimiter + output[row][3]); // repeat the old lines and append the new answer at the end
-                        }
-                        sr.Close();
-
-                        StreamWriter sw = System.IO.File.CreateText(_path_allResults);
-                        sw.WriteLine(sb2);
-                        sw.Close();
-                        print("Answers consolidated in path: " + _path_allResults);
-                    }
-                }
-                catch (IOException ex)
-                {
-                    Debug.Log(ex.Message);
+                    WriteToLocal(_path_allResults, content_all_results);
                 }
 
                 if (SaveToServer)
                 {
-                    string allText = System.IO.File.ReadAllText(_path_allResults);
-                    StartCoroutine(SendToServer(TargetURI, _completeFileName_allResults, allText));
+                    StartCoroutine(SendToServer(TargetURI, _completeFileName_allResults, content_all_results.ToString()));
                 }
             }
 
             QuestionnaireFinishedEvent.Invoke(); //notify 
         }
 
+        StringBuilder GetConsolidatedContent(string filepath, string[][] newData)
+        {
+            StringBuilder sb_all_content = new StringBuilder();
+
+            string header = "Answer_Participant_" + _studySetup.ParticipantId + "_condition_" + _studySetup.Condition; // header for this current participant
+
+            try
+            {
+                if (!File.Exists(filepath))
+                {
+                    sb_all_content.AppendLine(csvTitleRow[0] + Delimiter + csvTitleRow[1] + Delimiter + csvTitleRow[2] + Delimiter + header); // first row being the headers
+                    for (int row = 1; row < newData.GetLength(0); row++) // from the second row
+                    {
+                        sb_all_content.AppendLine(string.Join(Delimiter, newData[row]));
+                    }
+                }
+                else
+                {
+                    StreamReader sr = new StreamReader(filepath);
+                    sb_all_content.AppendLine(sr.ReadLine() + Delimiter + header); // copy the first row in the existing file and add a header for the new data
+                    for (int row = 1; row < newData.GetLength(0); row++) // from the second row
+                    {
+                        sb_all_content.AppendLine(sr.ReadLine() + Delimiter + newData[row][3]); // copy old data and add new data
+                    }
+                    sr.Close();
+                }
+            }
+            catch (IOException ex)
+            {
+                Debug.Log(ex.Message);
+            }
+            return sb_all_content;
+        }
+
         void WriteToLocal(string localPath, StringBuilder content)
         {
             print("Answers stored in path: " + localPath);
-            StreamWriter outStream = System.IO.File.CreateText(localPath);
-            outStream.WriteLine(content);
-            outStream.Close();
+            try
+            {
+                StreamWriter outStream = System.IO.File.CreateText(localPath);
+                outStream.WriteLine(content);
+                outStream.Close();
+            }
+            catch (IOException ex)
+            {
+                Debug.Log(ex.Message);
+            }
         }
 
         /// <summary>
