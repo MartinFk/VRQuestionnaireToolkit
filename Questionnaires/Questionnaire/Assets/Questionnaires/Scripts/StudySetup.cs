@@ -31,27 +31,27 @@ namespace VRQuestionnaireToolkit
 
         [Header("Customize feedback parameters on hovering:")]
         [Range(0, 1)]
-        public float vibratingDurationForHovering = 0.05f;
+        public float VibratingDurationForHovering = 0.05f;
         [Range(0, 200)]
-        public float vibratingFrequencyForHovering = 1.0f;
+        public float VibratingFrequencyForHovering = 1.0f;
         [Range(0, 100)]
-        public float vibratingAmplitudeForHovering = 5.0f;
+        public float VibratingAmplitudeForHovering = 5.0f;
         [Tooltip("Choose the audio file to play upon hovering over a button.")]
-        public AudioClip soundClipForHovering;
+        public AudioClip SoundClipForHovering;
         [Range(0.0f, 1.0f)]
-        public float hoveringVolume = 1.0f;
+        public float HoveringVolume = 1.0f;
 
         [Header("Customize feedback parameters on selecting:")]
         [Range(0, 1)]
-        public float vibratingDurationForSelecting = 0.05f;
+        public float VibratingDurationForSelecting = 0.05f;
         [Range(0, 200)]
-        public float vibratingFrequencyForSelecting = 200.0f;
+        public float VibratingFrequencyForSelecting = 200.0f;
         [Range(0, 100)]
-        public float vibratingAmplitudeForSelecting = 1.0f;
+        public float VibratingAmplitudeForSelecting = 1.0f;
         [Tooltip("Choose the audio file to play upon selecting on a button.")]
-        public AudioClip soundClipForSelecting;
+        public AudioClip SoundClipForSelecting;
         [Range(0.0f, 1.0f)]
-        public float selectingVolume = 1.0f;
+        public float SelectingVolume = 1.0f;
 
         private string _path; // file path to write the remembered transform values to
 
@@ -75,8 +75,6 @@ namespace VRQuestionnaireToolkit
             if (ConfigurationMode)
                 SaveCurrentValues();
         }
-
-
 
         /// <summary>
         /// Resize the questionnaire panel by hitting keys + and -.

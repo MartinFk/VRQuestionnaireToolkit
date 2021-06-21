@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+# Results generated while testing
+Questionnaires/Questionnaire/Assets/Questionnaires/Data/Answers/testdev
+Questionnaires/Questionnaire/Assets/Questionnaires/Data/Answers/testdev.meta
+
