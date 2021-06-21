@@ -38,7 +38,7 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 6. 📁Auto-export as .csv or .txt file.
 7. 🌌Fully compatible with other frameworks.
 8. 🍒Customizable tactile and sound feedback.
-9. 📡Remote Server 
+9. 📡Remote Server.
 
 ## Downloads
 - 🍧Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2021/06/IntegrationV1.4.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
