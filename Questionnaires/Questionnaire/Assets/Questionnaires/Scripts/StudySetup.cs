@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -132,9 +133,9 @@ namespace VRQuestionnaireToolkit
         void SaveCurrentValues()
         {
             string thingsToWrite;
-            thingsToWrite = transform.localPosition.x + "," + transform.localPosition.y + "," + transform.localPosition.z + "," +
-                "\n" + transform.localRotation.x + "," + transform.localRotation.y + "," + transform.localRotation.z + "," + transform.localRotation.w + "," +
-                "\n" + transform.localScale.x + "," + transform.localScale.y + "," + transform.localScale.z;
+            thingsToWrite = transform.localPosition.x.ToString(CultureInfo.InvariantCulture) + "," + transform.localPosition.y.ToString(CultureInfo.InvariantCulture) + "," + transform.localPosition.z.ToString(CultureInfo.InvariantCulture) + "," +
+                "\n" + transform.localRotation.x.ToString(CultureInfo.InvariantCulture) + "," + transform.localRotation.y.ToString(CultureInfo.InvariantCulture) + "," + transform.localRotation.z.ToString(CultureInfo.InvariantCulture) + "," + transform.localRotation.w.ToString(CultureInfo.InvariantCulture) + "," +
+                "\n" + transform.localScale.x.ToString(CultureInfo.InvariantCulture) + "," + transform.localScale.y.ToString(CultureInfo.InvariantCulture) + "," + transform.localScale.z.ToString(CultureInfo.InvariantCulture);
             WriteStringToFile(thingsToWrite, _path);
         }
 
@@ -147,7 +148,7 @@ namespace VRQuestionnaireToolkit
             float[] values = new float[10];
             for (int i = 0; i < strings.Length; i++)
             {
-                values[i] = float.Parse(strings[i]);
+                values[i] = float.Parse(strings[i], CultureInfo.InvariantCulture);
             }
             this.transform.localPosition = new Vector3(values[0], values[1], values[2]);
             this.transform.localRotation = new Quaternion(values[3], values[4], values[5], values[6]);
