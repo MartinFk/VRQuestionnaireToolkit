@@ -41,8 +41,8 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 9. 📡Remote Server.
 
 ## Downloads
-- 🍧Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2021/06/IntegrationV1.4.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
-- 🍪Standalone version (Unity package v. 2019.3): <a href="http://martinfeick.com/wp-content/uploads/2021/06/StandaloneV1.4.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
+- 🍧Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2021/08/IntegrationV1.4.1.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
+- 🍪Standalone version (Unity package v. 2019.3): <a href="http://martinfeick.com/wp-content/uploads/2021/08/StandaloneV1.4.1.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
 - 🔖JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/12/questionsV1.1.zip" target="_blank" rel="noopener noreferrer">json samples</a><br>
 - 🎓Paper: <a href="https://dl.acm.org/doi/abs/10.1145/3379350.3416188" target="_blank" rel="noopener noreferrer"> UIST 20 - Extended Abstracts</a><br>
 - 📋BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib" target="_blank" rel="noopener noreferrer"> VRQuestionnaireToolkit.bib</a><br>
@@ -50,7 +50,7 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 - 🎥Preview: <a href="http://martinfeick.com/wp-content/uploads/2020/08/VRquestionnaireToolkit.mp4" target="_blank" rel="noopener noreferrer">Video</a><br>
 
 ## Requirements
-- Unity3D 2019.x.x (https://unity.com/) -> tested on several 2019.2 and 2019.3 versions
+- Unity3D 2019.x.x and 2020.x.x (https://unity.com/) -> tested on several 2019.x and 2020.x versions
 - SteamVR (https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647)
 - Vive Input Utility (https://assetstore.unity.com/packages/tools/integration/vive-input-utility-64219)
 
