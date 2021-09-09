@@ -36,7 +36,7 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 4. 👓Comes with six standard questionnaire types.
 5. 📙NASA TLX, Simulation Sickness Questionnaire, IPQ and SUS Presence Questionnaire as well as System Usability Scale (SUS) already included.
 6. 📁Auto-export as .csv or .txt file.
-7. 🌌Fully compatible with other frameworks.
+7. 🌌Fully compatible with other frameworks (such as <a href="https://github.com/immersivecognition/unity-experiment-framework" target="_blank" rel="noopener noreferrer"> UXF</a>).
 8. 🍒Customizable tactile and sound feedback.
 9. 📡Remote Server.
 
