@@ -1,0 +1,159 @@
+{
+   "qTitle":"MPS Questionnaire - Physical Presence + Self Presence",
+   "qInstructions":"Instructions: Please answer all 14 questions by clicking a point on the scale that best represents your experience with the task in the virtual environment (VE)",
+   "qId":"IPQ",
+   "questions":[
+      {
+         "pId":"page1",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qData":[
+            {
+               "qId":" PHYS_2",
+               "qText":"The virtual environment seemed real to me.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"                
+               ]
+            },
+            {
+               "qId":"PHYS_3",
+               "qText":"I had a sense of acting in the virtual environment, rather than operating something from outside.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree" 
+               ]
+            },
+            {
+               "qId":" PHYS_4",
+               "qText":"My experience in the virtual environment seemed consistent with my experiences in the real world.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page2",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qMandatory":"true",
+         "qData":[
+            {
+               "qId":" PHYS_5",
+               "qText":"While I was in the virtual environment, I had a sense of “being there”.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"
+               ]
+            },
+            {
+               "qId":" PHYS_10",
+               "qText":"I was completely captivated by the virtual world.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page3",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qMandatory":"true",
+         "qData":[
+            {
+               "qId":"SELF_2",
+               "qText":"I felt like my virtual embodiment was an extension of my real body within the virtual environment.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"
+               ]
+            },
+            {
+               "qId":"SELF_3",
+               "qText":"When something happened to my virtual embodiment, it felt like it was happening to my real body.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"
+               ]
+            },
+            {
+               "qId":"SELF_4",
+               "qText":"I felt like my real arm was projected into the virtual environment through my virtual embodiment.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"
+               ]
+            }
+         ]
+      },
+      {
+         "pId":"page4",
+         "qType":"radio",
+         "qInstructions":"Please choose one of the following options...",
+         "qMandatory":"true",
+         "qData":[
+            {
+               "qId":"SELF_6",
+               "qText":"I felt like my real hand was inside of the virtual environment.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"
+               ]
+            },
+            {
+               "qId":"SELF_7",
+               "qText":"During the simulation, I felt like my virtual embodiment and my real body became one and the same.",
+               "qMandatory":"true",
+               "qOptions":[
+                  "completely disagree",
+                  "disagree",
+                  "neither disagree nor agree",
+                  "agree",
+                  "strongly agree"
+               ]
+            }
+         ]
+      }
+   ],
+   "qMessage":"You have completed the questionnaire"   
+}
