@@ -33,8 +33,8 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 1. ⚡Plug & Play integration.
 2. 🚩Supports Desktop (no VR required) & Virtual Reality mode (HTC VIVE or Oculus controller).
 3. 🍏Works as build and in editor.
-4. 👓Comes with six standard questionnaire types.
-5. 📙NASA TLX, Simulation Sickness Questionnaire, IPQ and SUS Presence Questionnaire as well as System Usability Scale (SUS) already included.
+4. 👓Comes with seven standard questionnaire types.
+5. 📙NASA TLX, Simulation Sickness Questionnaire, IPQ and SUS Presence Questionnaire, System Usability Scale and more already included.
 6. 📁Auto-export as .csv or .txt file.
 7. 🌌Fully compatible with other frameworks (such as <a href="https://github.com/immersivecognition/unity-experiment-framework" target="_blank" rel="noopener noreferrer"> UXF</a>).
 8. 🍒Customizable tactile and sound feedback.
