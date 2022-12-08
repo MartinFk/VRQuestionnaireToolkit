@@ -42,7 +42,7 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 
 ## Downloads
 - 🍧Existing VR projects (Unity package): <a href="http://martinfeick.com/wp-content/uploads/2021/08/IntegrationV1.4.1.zip" target="_blank" rel="noopener noreferrer"> Integration </a><br>
-- 🍪Standalone version (Unity package v. 2019.3): <a href="http://martinfeick.com/wp-content/uploads/2021/08/StandaloneV1.4.1.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
+- 🍪Standalone version (Unity package v. 2019.3, comes with all dependencies): <a href="http://martinfeick.com/wp-content/uploads/2021/08/StandaloneV1.4.1.zip" target="_blank" rel="noopener noreferrer"> Standalone </a><br>
 - 🔖JSON Files:  <a href="http://martinfeick.com/wp-content/uploads/2020/12/questionsV1.1.zip" target="_blank" rel="noopener noreferrer">json samples</a><br>
 - 🎓Paper: <a href="https://dl.acm.org/doi/abs/10.1145/3379350.3416188" target="_blank" rel="noopener noreferrer"> UIST 20 - Extended Abstracts</a><br>
 - 📋BibTex: <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/blob/master/VRQuestionnaireToolkit.bib" target="_blank" rel="noopener noreferrer"> VRQuestionnaireToolkit.bib</a><br>
@@ -55,7 +55,7 @@ We greatly appreciate any contributions and pull-requests (please commit to dev 
 - Vive Input Utility (https://assetstore.unity.com/packages/tools/integration/vive-input-utility-64219)
 
 ## How To Get Started ☀️
-1. Download standalone unitypackage
+1. Download standalone unitypackage (only Unity v.2019.3. For any other Unity3D version, please see integration)
 2. Import package into assets folder
 3. Load samples scene (delete standard scene)
 4. Run Demo
