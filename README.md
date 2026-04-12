@@ -71,4 +71,4 @@ Visit the <a href="https://github.com/MartinFk/VRQuestionnaireToolkit/wiki"> Wik
 </p>
 
 ## Issues
-If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us under martin.feick@dfki.de 📫.
+If you face any problems while using the toolkit, please open an issue here - https://github.com/MartinFk/VRQuestionnaire/issues or contact us under martin.feick@kit.edu 📫.
